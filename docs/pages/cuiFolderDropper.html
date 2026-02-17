@@ -1,0 +1,71 @@
+<link rel="stylesheet" href="entry.css" />
+<h1>cuiFolderDropper</h1>
+<p>The is a custom control allowing the user to drop a folder (or multiple folders) onto it.<br>
+The user can also just click it to open an OpenFolderDialog<br>
+(CuoreUI implements it for older versions of .NET Framework).</p>
+<div class="block" id="info">
+You, as a developer can attach to the <code>FolderDropped</code> event:<br>
+It provides the folder paths through its custom <code>FolderDroppedEventArgs</code> for ease of use.<br>
+Alternatively, you can use the <code>FolderName</code> or <code>FolderNames</code> getter properties.
+</div>
+<p>There's a similar control: <a href="cuiFileDropper.html">cuiFileDropper</a>, which lets you drop/select files.</p>
+<h2>Highlighted Properties</h2>
+<p>The control exposes many properties, these are the most important ones.</p>
+<div class="block">
+<div class="property">
+    <p>Padding</p>
+    Rounding
+</div>
+<p>Specifies how rounded the corners should be, in pixels.</p>
+</div>
+<br>
+<div class="block">
+<div class="property">
+    <p>bool</p>
+    Multiselect
+</div>
+<p>If true, the user is able to drop/select multiple folders.</p>
+</div>
+<br>
+<div class="block">
+<div class="property">
+    <p>String</p>
+    NormalContent
+</div>
+<p>The text content when the user is not doing anything with the control.</p>
+</div>
+<br>
+<div class="block">
+<div class="property">
+    <p>String</p>
+    HoverContent
+</div>
+<p>The text content when the user is dragging something over the control, but still hasn't released their mouse button.</p>
+</div>
+<br>
+<div class="block">
+<div class="property">
+    <p>bool</p>
+    UploadWithClick
+</div>
+<p>Controls whether the user will be able to click on the control to choose a folder (or folders) with an OpenFolderDialog.<br>
+If false, the <code>UploadContent</code> text won't be rendered.</p>
+</div>
+<br>
+<div class="block">
+<div class="property">
+    <p>String</p>
+    UploadContent
+</div>
+<p>The text content telling the user they can also click to select.<br>
+This text will display both when the control is idle, but also when dropping a folder.</p>
+</div>
+<br>
+<div class="block">
+<div class="property">
+    <p>Image</p>
+    Image
+</div>
+<p>This <code>Image</code> will display above the NormalContent text.<br>
+Its spacing and size can be controlled with the <code>ImageSize</code> and <code>ImagePadding</code> respectively.</p>
+</div>

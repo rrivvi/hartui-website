@@ -1,0 +1,78 @@
+* {
+  overflow: hidden;
+  border: none;
+  font-family: "Montserrat";
+  overflow-x: hidden;
+}
+
+body {
+  background: #000000;
+  margin: 0;
+}
+
+body * {
+  transition: 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+header {
+  background: black;
+  height: 90px;
+  border-bottom: 1px solid rgb(19, 19, 19);
+}
+
+header img {
+  height: 45px;
+  position: fixed;
+  top: 22.5px;
+  left: 202px;
+}
+
+header .button {
+  position: fixed;
+  top: 27px;
+  left: 22.5px;
+}
+
+header p {
+  position: fixed;
+  top: 20px;
+  left: 258px;
+  color: white;
+}
+
+.v-s {
+  position: absolute;
+  height: 100%;
+  margin: 1rem 0 1rem 0;
+  width: 1px;
+  background-color: rgb(32, 32, 32);
+  height: 56px;
+  left: 184px;
+}
+
+.button {
+  user-select: none;
+  display: inline-block;
+  box-sizing: border-box;
+  min-height: 30px;
+  width: auto;
+  background-color: #000000;
+  color: white;
+  text-align: center;
+  padding: 0.5rem;
+  padding-left: calc(0.5rem + 22px);
+  background-image: url("b.webp");
+  background-repeat: no-repeat;
+  background-position: 4px 7px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-position: 1px 7px;
+  filter: brightness(0.6);
+}
+
+.button:active {
+  transition-duration: 0.04s;
+  filter: brightness(0.4);
+}

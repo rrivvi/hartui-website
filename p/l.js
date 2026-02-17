@@ -1,0 +1,1 @@
+if(top.location.href.includes("/p/"))top.location="https://cuoreui.netlify.app"

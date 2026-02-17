@@ -1,0 +1,59 @@
+<link rel="stylesheet" href="entry.css" />
+<h1>cuiButtonGroup</h1>
+<p>The cuiButtonGroup is the same as cuiButton, except it introduces Group-based radio behaviour.<br>
+There's a similar control: <a href="cuiButton.html">cuiButton</a>, without the radio behaviour.</p>
+<p>When clicked, it will uncheck all other group buttons who share the same <code>Parent</code> and <code>Group</code> value, and become checked itself.</p>
+<h2>Highlighted Properties</h2>
+<p>The control exposes many properties, these are the most important ones.</p>
+<div class="block">
+<div class="property">
+    <p>int</p>
+    Group
+</div>
+<p>When clicked, other group buttons from the same <code>Parent</code> with the same <code>Group</code> value will become unchecked.</p>
+</div>
+<br>
+<div class="block">
+<div class="property">
+    <p>Padding</p>
+    Rounding
+</div>
+<p>Specifies how rounded the corners should be, in pixels.</p>
+</div>
+<br>
+<div class="block">
+<div class="property">
+    <p>String</p>
+    Content
+</div>
+<p>The text content of the control.<br>
+For newcomers, you can also use the <code>Text</code> variable in code, but it's not available from the Designer.</p>
+</div>
+<br>
+<div class="block">
+<div class="property">
+    <p>bool</p>
+    Checked
+</div>
+<p>This property will determine if the button is in a checked state.<br>
+The checked state has priority above mouse states.</p>
+<p>When set to <code>true</code>, other group buttons from the same <code>Parent</code> with the same <code>Group</code> value will become unchecked.</p></p>
+</div>
+<div class="block">
+<div class="property">
+    <p>Image</p>
+    Image
+</div>
+<p>Your <code>Image</code> will be displayed to the left of the <code>Content</code></p>
+<p>Its Size can be manually adjusted with the <code>ImageExpand</code> property.<br>
+Its Position relative to the text Content can be adjusted with the <code>TextSpacing</code> property.</p>
+</div>
+<h2>Exposed Methods</h2>
+<p>Winforms controls expose many controls by default, here are the most important ones.</p>
+<div class="block">
+<div class="property">
+    <p>void</p>
+    PerformClick()
+</div>
+<p>Runs mouse click logic, then invokes the <code>OnClick</code> EventHandler.</p>
+</div>
