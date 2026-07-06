@@ -1,1 +1,1 @@
-if(top.location.href.includes("/p/"))top.location="https://cuoreui.netlify.app"
+if(top.location.href.includes("/p/"))top.location="https://HartUI.netlify.app"

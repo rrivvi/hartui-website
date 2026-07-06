@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", (event) => {
   const n = `
         <button id="p/h.html" class="e e1 a">Home</button>
-        <button id="https://github.com/owtysm2/CuoreUI" class="e e2 e-o">Repository</button>
+        <button id="https://github.com/rrivvi/HartUI" class="e e2 e-o">Repository</button>
         <button id="/docs/index.html" class="e e4 e-o">Docs</button>
     `;
 
@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
   h.innerHTML = n;
 
   function l() {
-    if (document.title === "CuoreUI" || i.src === "") {
+    if (document.title === "HartUI" || i.src === "") {
       for (ch2 of h.children) {
         ch2.classList.remove("a");
       }
