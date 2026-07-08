@@ -1,0 +1,19 @@
+.snowflake {
+  position: fixed;
+  top: -5px;
+  background: rgb(255, 255, 255);
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+.s{
+  position: absolute;
+  background-color: transparent;
+  background-image: url('ornaments.svg');
+  width: 100vw;
+  height: 80px;
+  background-repeat: repeat-x;
+  top: 54px;
+  z-index: 9;
+}

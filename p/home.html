@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<script src="l.js"></script>
+<link rel="stylesheet" href="../styles.css" />
+<link
+  href="https://fonts.googleapis.com/css?family=Montserrat"
+  rel="stylesheet"
+/>
+<div
+  style="
+    width: 100vw;
+    height: calc(100vh);
+    background-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.05) 1px,
+        transparent 1px
+      ),
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+    background-size: 32px 32px;
+  "
+>
+  <div
+    style="
+      position: absolute;
+      width: 55%;
+      left: 22.5%;
+      top: calc(50% - 45px);
+      transform: translateY(-50%);
+      text-align: center;
+    "
+  >
+    <img src="t.webp" id="t"/>
+    <img src="h.svg" style="width: 100%" />
+    <!-- <p>Stretch WinForms to its modern glory!</p> -->
+    <p>💥Stretch WinForms to its modern glory!😼</p>
+    
+    <button
+      style="
+        background: #004980;
+        background-image: url('n.webp');
+        display: inline-block;
+      "
+      onclick="top.location = `https://www.nuget.org/packages/HartUI.Winforms`"
+    ></button>
+    <div style="background: #bebebe;border-radius: 2px;width: 4px;height: 4px;margin: 0 auto;display: inline-block;transform: translateY(-20px);"></div>
+    <button
+      style="
+        background: black;
+        background-image: url('g.webp');
+        display: inline-block;
+      "
+      onclick="top.location = `https://github.com/rrivvi/HartUI`"
+    ></button>
+
+
+    <div style="height: 24px; margin: 0">
+      <img
+        src="a.webp"
+        style="width: 16px; display: inline-block; vertical-align: middle"
+      />
+      <p
+        id="c"
+        style="display: inline-block; vertical-align: middle; margin: 0"
+      >
+        ████
+      </p>
+    </div>
+
+  </div>
+</div>
+
+<script>
+    let k1 = 0;
+  let k2 = 0;
+  let k3 = -52;
+  let k4 = false;
+  const c = document.getElementById("c");
+
+  async function t() {
+    const d = await g("HartUI.Winforms");
+    if (d !== -1)
+  {
+     k1 = d;
+     k4 = true;
+     document.cookie = `cached-downloads=${k1}; max-age=3600; path=/`;
+  }
+  }
+  async function g(p) {
+    const u = "https://api.nuget.org/v3/index.json";
+    try {
+      const r = await fetch(u);
+      if (!r.ok) return;
+      const j = await r.json(),
+        s = j.resources.find((r) => r["@type"] === "SearchQueryService");
+      if (!s) return;
+      const q = `${s["@id"]}?q=packageid:${p}`,
+        f = await fetch(q);
+      if (!f.ok) return;
+      const d = await f.json(),
+        pkg = d.data[0];
+      if (!d.totalHits || !pkg) return;
+      if (pkg.totalDownloads == null || pkg.totalDownloads < 0) return;
+      return pkg.totalDownloads;
+    } catch (e) {}
+  }
+
+  function getCookie(name) {
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+  if (parts.length === 2) return parts.pop().split(';').shift();
+  return null;
+}
+
+k1 = getCookie('cached-downloads');
+k1 = k1 ? parseInt(k1, 10) : 0;
+if (k1 && k1 > 1) {
+  k4 = true;
+} else {
+  t();
+}
+
+  function k() {
+    setTimeout(() => {
+      const n = Math.round((k2 * 4 + k1) / 5);
+      if (n === k3) {
+        if (k4 && n === k2) {
+          c.textContent = k1;
+          return;
+        }
+      }
+      k3 = n;
+      k2 = k3;
+      if (k1 !== 0) {
+        c.textContent = k2;
+      }
+      k();
+    }, 16);
+  }
+  k();
+</script>
