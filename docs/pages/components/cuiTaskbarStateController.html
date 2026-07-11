@@ -1,0 +1,91 @@
+<link rel="stylesheet" href="../entry.css" />
+
+<h1>cuiTaskbarStateController</h1>
+
+<p>
+    Controls the appearance of the application's taskbar button by displaying a
+    progress indicator or changing its state to indicate paused or failed
+    operations.
+</p>
+
+<h2>Important Properties</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Property</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>TargetForm</code></td>
+            <td>The form whose taskbar button will be updated.</td>
+        </tr>
+        <tr>
+            <td><code>State</code></td>
+            <td>
+                Selects the taskbar progress state. Available values are
+                <code>Progress</code>, <code>Paused</code>,
+                <code>Error</code>, and <code>Default</code>.
+            </td>
+        </tr>
+        <tr>
+            <td><code>ProgressValue</code></td>
+            <td>
+                The current progress value displayed when the
+                <code>State</code> is not <code>Default</code>.
+            </td>
+        </tr>
+        <tr>
+            <td><code>MaxValue</code></td>
+            <td>
+                Specifies the maximum progress value used to calculate the taskbar
+                progress percentage.
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>Methods</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Method</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>Flash()</code></td>
+            <td>
+                Continuously flashes the application's taskbar button until the
+                window receives focus, helping draw the user's attention.
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="block" id="info">
+    <strong>Tip</strong><br>
+    Updating <code>ProgressValue</code>, <code>MaxValue</code>, or
+    <code>State</code> immediately refreshes the taskbar progress indicator.
+</div>
+
+<br>
+
+<div class="block" id="caution">
+    <strong>Caution</strong><br>
+    When <code>State</code> is set to <code>Default</code>, the taskbar progress
+    indicator is completely removed, regardless of the current
+    <code>ProgressValue</code>.
+</div>
+
+<br>
+
+<div class="block">
+    <strong>Note</strong><br>
+    The taskbar progress indicator and flashing behavior are only available on
+    supported versions of Windows.
+</div>

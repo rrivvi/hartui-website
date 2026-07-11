@@ -1,0 +1,107 @@
+<link rel="stylesheet" href="../entry.css" />
+
+<h1>cuiCalendarDatePicker</h1>
+
+<p>
+    A button-like control that displays the currently selected date. Clicking
+    the control opens the HartUI date picker dialog, allowing the user to select
+    a new date.
+</p>
+
+<h2>Important Properties</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Property</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>Content</code></td>
+            <td>
+                Gets or sets the selected date. The time portion is discarded,
+                leaving only the date.
+            </td>
+        </tr>
+        <tr>
+            <td><code>Theme</code></td>
+            <td>
+                Specifies whether the date picker dialog opens using the
+                <code>Light</code> or <code>Dark</code> theme.
+            </td>
+        </tr>
+        <tr>
+            <td><code>EnableThemeChangeButton</code></td>
+            <td>
+                Determines whether the dialog displays a button that allows the
+                user to switch between light and dark themes.
+            </td>
+        </tr>
+        <tr>
+            <td><code>PickerPosition</code></td>
+            <td>
+                Controls where the date picker dialog appears relative to the
+                control.
+            </td>
+        </tr>
+        <tr>
+            <td><code>ShowIcon</code></td>
+            <td>
+                Determines whether the calendar icon is displayed next to the
+                selected date.
+            </td>
+        </tr>
+        <tr>
+            <td><code>Icon</code></td>
+            <td>Sets the image displayed beside the selected date.</td>
+        </tr>
+        <tr>
+            <td><code>IconTint</code></td>
+            <td>Tints the displayed calendar icon.</td>
+        </tr>
+        <tr>
+            <td><code>Rounding</code></td>
+            <td>Controls the corner radius of the control.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>Methods</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Method</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>ShowDialog()</code></td>
+            <td>
+                Opens the date picker dialog programmatically.
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>Events</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Event</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>DateChanged</code></td>
+            <td>
+                Occurs whenever the selected date changes.
+            </td>
+        </tr>
+    </tbody>
+</table>

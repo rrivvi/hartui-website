@@ -1,0 +1,98 @@
+<link rel="stylesheet" href="../entry.css" />
+
+<h1>cuiTextBox</h1>
+
+<p>
+    A customizable text box supporting rounded corners, placeholder text,
+    optional images, multiline input, and focus-specific appearance.
+</p>
+
+<h2>Important Properties</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Property</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>Content</code></td>
+            <td>Gets or sets the current text. This property is equivalent to <code>Text</code>.</td>
+        </tr>
+        <tr>
+            <td><code>PlaceholderText</code></td>
+            <td>Text displayed when the control is empty and does not have focus.</td>
+        </tr>
+        <tr>
+            <td><code>Multiline</code></td>
+            <td>Determines whether the control accepts multiple lines of text.</td>
+        </tr>
+        <tr>
+            <td><code>PasswordChar</code></td>
+            <td>Displays password characters instead of the entered text.</td>
+        </tr>
+        <tr>
+            <td><code>UnderlinedStyle</code></td>
+            <td>Draws only the bottom border instead of a complete outline.</td>
+        </tr>
+        <tr>
+            <td><code>Image</code></td>
+            <td>Displays an optional image inside the text box. Its position, size, and tint can be customized.</td>
+        </tr>
+        <tr>
+            <td><code>Rounding</code></td>
+            <td>Controls the corner radius of the text box.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>Methods</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Method</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>ResetText()</code></td>
+            <td>Clears the current text and restores the placeholder if applicable.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>Events</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Event</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>ContentChanged</code></td>
+            <td>Occurs whenever the text entered by the user changes.</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="block" id="info">
+    <strong>Tip</strong><br>
+    Use the <code>Content</code> property instead of accessing the internal
+    text box directly. <code>Content</code> and <code>Text</code> always refer
+    to the same value.
+</div>
+
+<br>
+
+<div class="block">
+    <strong>Note</strong><br>
+    The placeholder text is only visible when the control is empty and does not
+    have keyboard focus.
+</div>

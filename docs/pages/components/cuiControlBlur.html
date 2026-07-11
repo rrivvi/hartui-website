@@ -1,0 +1,42 @@
+<link rel="stylesheet" href="../entry.css" />
+
+<h1>cuiControlBlur</h1>
+
+<p>
+    Applies a blur effect to an existing control by intercepting its paint
+    operation. The blurred image is cached and automatically regenerated whenever
+    the control's contents change.
+</p>
+
+<h2>Important Properties</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Property</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>TargetControl</code></td>
+            <td>The control that should be blurred. Forms are not supported.</td>
+        </tr>
+        <tr>
+            <td><code>BlurAmount</code></td>
+            <td>Controls the strength of the blur. Larger values produce a stronger blur effect.</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="block" id="warn">
+    <strong>Warning</strong><br>
+    This component replaces the target control's rendered appearance with a blurred version. Any changes to the control's contents automatically invalidate the cached image and cause the blur to be regenerated.
+</div>
+
+<br>
+
+<div class="block" id="info">
+    <strong>Tip</strong><br>
+    The blurred image is cached for performance. It is only recreated when the target control is invalidated, resized, or when <code>BlurAmount</code> changes.
+</div>

@@ -1,0 +1,100 @@
+<link rel="stylesheet" href="../entry.css" />
+
+<h1>cuiMessageDialog</h1>
+
+<p>
+    Displays a modern customizable message dialog while preventing interaction
+    with the parent form until the user selects an option. The dialog supports
+    common <code>MessageBoxButtons</code> layouts and returns a standard
+    <code>DialogResult</code>.
+</p>
+
+<h2>Important Properties</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Property</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>DimColor</code></td>
+            <td>The color and opacity of the overlay applied behind the dialog while it is open.</td>
+        </tr>
+        <tr>
+            <td><code>DialogSize</code></td>
+            <td>The default size of the dialog window. The height can automatically increase when the displayed text requires additional space.</td>
+        </tr>
+        <tr>
+            <td><code>DialogPadding</code></td>
+            <td>The padding applied between the dialog content and its edges.</td>
+        </tr>
+        <tr>
+            <td><code>ButtonSize</code></td>
+            <td>Controls the size of the buttons displayed inside the dialog.</td>
+        </tr>
+        <tr>
+            <td><code>Rounding</code></td>
+            <td>Controls the corner radius of the dialog window.</td>
+        </tr>
+        <tr>
+            <td><code>BackColor</code></td>
+            <td>The dialog background color.</td>
+        </tr>
+        <tr>
+            <td><code>ForeColor</code></td>
+            <td>The dialog text color.</td>
+        </tr>
+        <tr>
+            <td><code>OKText</code></td>
+            <td>The text displayed on the OK button.</td>
+        </tr>
+        <tr>
+            <td><code>YesText</code></td>
+            <td>The text displayed on the Yes button.</td>
+        </tr>
+        <tr>
+            <td><code>NoText</code></td>
+            <td>The text displayed on the No button.</td>
+        </tr>
+        <tr>
+            <td><code>CancelText</code></td>
+            <td>The text displayed on the Cancel button.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>Methods</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Method</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>ShowDialog(Form parentForm, string description, string title = "")</code></td>
+            <td>Displays a dialog containing the specified message using an OK button.</td>
+        </tr>
+        <tr>
+            <td><code>ShowDialog(Form parentForm, string description, string title, MessageBoxButtons messageBoxButtons)</code></td>
+            <td>Displays a dialog using the specified button layout and returns the user's selection.</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="block" id="info">
+    <strong>Tip</strong><br>
+    The dialog uses the standard <code>DialogResult</code> values, making it possible to handle responses in the same way as a regular WinForms message box.
+</div>
+
+<br>
+
+<div class="block">
+    <strong>Note</strong><br>
+    The dialog instance is created internally each time <code>ShowDialog()</code> is called. Configure the component properties before displaying the dialog.
+</div>

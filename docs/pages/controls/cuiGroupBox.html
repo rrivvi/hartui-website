@@ -1,0 +1,48 @@
+<link rel="stylesheet" href="../entry.css" />
+
+<h1>cuiGroupBox</h1>
+
+<p>
+    A lightweight container with a rounded border and an optional title displayed
+    in its top-left corner.
+</p>
+
+<h2>Important Properties</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Property</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>Content</code></td>
+            <td>Sets the title displayed at the top of the group box.</td>
+        </tr>
+        <tr>
+            <td><code>Text</code></td>
+            <td>An alias for <code>Content</code>, provided for compatibility with standard WinForms controls.</td>
+        </tr>
+        <tr>
+            <td><code>Rounding</code></td>
+            <td>Controls the corner radius of the border.</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="block" id="info">
+    <strong>Tip</strong><br>
+    Child controls can be added directly to the group box, just like with a
+    standard <code>Panel</code>.
+</div>
+
+<br>
+
+<div class="block" id="caution">
+    <strong>Caution</strong><br>
+    The control automatically adjusts its internal <code>Padding</code> to leave
+    space for the title. Setting <code>Padding</code> manually has no lasting
+    effect.
+</div>

@@ -55,30 +55,31 @@ button {
 
 iframe {
   position: absolute;
-  top:90px;
+  top: 90px;
   height: calc(100vh - 90px);
   width: 100vw;
 }
 
 button:hover {
   transform: scale(0.95);
-    border: 1px #ffffff64 solid;
-    filter: contrast(0.8) brightness(0.8);
+  border: 1px #ffffff64 solid;
+  filter: contrast(0.8) brightness(0.8);
 }
 
 button:active {
   transition-duration: 200ms;
   transform: scale(0.8);
-    border: 1px transparent solid;
-    filter: brightness(0.5) contrast(1.2);
+  border: 1px transparent solid;
+  filter: brightness(0.5) contrast(1.2);
 }
 
-body{
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+body {
+  background-image: linear-gradient(to right, #0000000d 1px, transparent 1px), linear-gradient(to bottom, #0000000d 1px, transparent 1px);
 }
 
 p {
-  color: gray; margin-top: 1px;
+  color: gray;
+  margin-top: 1px;
   font-size: 18px;
 }
 
@@ -87,57 +88,72 @@ button.a {
   border-color: #E00C5C;
 }
 
-.e{
+.e {
   width: 152px;
   padding-left: 22px;
   background-repeat: no-repeat;
-background-size: 16px;
+  background-size: 16px;
+  padding-bottom: 2px;
 }
 
-.e1{
+.e1 {
   background-position: 42px 14px;
-background-image: url('o.webp');
+  background-image: url('home.webp');
 }
 
-.e2{
+.e2 {
   background-position: 28px 14px;
-background-image: url('y.webp');
+  background-image: url('github.webp');
 }
 
-.e3{
+.e3 {
   background-position: 36px 14px;
-background-image: url('e.webp');
-}
-.e4{
-  background-position: 46px 14px;
-background-image: url('logo.webp');
+  background-image: url('docs.webp');
 }
 
-img{
+.e4 {
+  background-position: 46px 14px;
+  background-image: url('logo.webp');
+}
+
+.e5 {
+  background-position: 36px 14px;
+  background-image: url('docs/control.webp');
+}
+
+img {
   pointer-events: none;
   user-select: none;
 }
 
-#x{
+#x {
   width: 54.5vw;
-    padding-top: 20px;
-    pointer-events:all;
+  padding-top: 20px;
+  pointer-events: all;
 }
 
-#x:hover{
-filter:brightness(1.5)
+#x:hover {
+  filter: brightness(1.5)
 }
 
-button{
-    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) ;
+button {
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 @keyframes fadeIn {
-    0% { opacity: 0.7; }
-    50% { opacity: 1; }
-    100% { opacity: 0.7; }
+  0% {
+    opacity: 0.7;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.7;
+  }
 }
 
-#t{
+#t {
   animation: infinite fadeIn 1.5s;
 }

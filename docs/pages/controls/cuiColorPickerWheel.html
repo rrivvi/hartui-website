@@ -1,0 +1,74 @@
+<link rel="stylesheet" href="../entry.css" />
+
+<h1>cuiColorPickerWheel</h1>
+
+<p>
+    An HSV color picker consisting of an outer hue ring and an inner
+    saturation/value triangle.
+</p>
+
+<h2>Important Properties</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Property</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>Content</code></td>
+            <td>Gets or sets the currently selected color.</td>
+        </tr>
+        <tr>
+            <td><code>WheelThickness</code></td>
+            <td>
+                Controls the thickness of the hue ring. Increasing this value
+                reduces the size of the saturation/value triangle.
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>Events</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Event</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>ContentChanged</code></td>
+            <td>
+                Occurs whenever the selected color changes, either by user
+                interaction or by assigning <code>Content</code> from code.
+            </td>
+        </tr>
+        <tr>
+            <td><code>SelectedColor</code></td>
+            <td>
+                Occurs after the user finishes selecting a color by releasing
+                the left mouse button.
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="block" id="info">
+    <strong>Tip</strong><br>
+    Use <code>ContentChanged</code> for live previews while the user is dragging
+    the selection, and <code>SelectedColor</code> when you only need the final
+    color.
+</div>
+
+<br>
+
+<div class="block">
+    <strong>Note</strong><br>
+    Assigning <code>Content</code> automatically updates the wheel and selection
+    indicator to match the specified color.
+</div>

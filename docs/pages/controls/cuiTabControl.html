@@ -1,0 +1,159 @@
+<link rel="stylesheet" href="../entry.css" />
+
+<h1>cuiTabControl</h1>
+
+<p>
+    A custom tab control whose pages are created programmatically instead of
+    through the designer. Each tab hosts a <code>Control</code>, such as a
+    <code>UserControl</code>, and can optionally display an image.
+</p>
+
+<h2>Important Properties</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Property</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>SelectedIndex</code></td>
+            <td>Gets or changes the currently selected tab by index.</td>
+        </tr>
+        <tr>
+            <td><code>SelectedTab</code></td>
+            <td>Gets or changes the currently selected <code>TabPage</code>.</td>
+        </tr>
+        <tr>
+            <td><code>Pages</code></td>
+            <td>Provides a read-only collection of all tabs.</td>
+        </tr>
+        <tr>
+            <td><code>Count</code></td>
+            <td>Gets the number of tabs currently in the control.</td>
+        </tr>
+        <tr>
+            <td><code>ShowPlus</code></td>
+            <td>Determines whether the built-in add tab button is displayed.</td>
+        </tr>
+        <tr>
+            <td><code>ShowDelete</code></td>
+            <td>Determines whether close buttons are shown on tab headers.</td>
+        </tr>
+        <tr>
+            <td><code>NamingConvention</code></td>
+            <td>Specifies the base name used when automatically creating new tabs.</td>
+        </tr>
+        <tr>
+            <td><code>ScrollOffset</code></td>
+            <td>Gets or sets the current horizontal scroll position of the tab strip.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>Methods</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Method</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>AddTab()</code></td>
+            <td>Creates a new empty tab using the current <code>NamingConvention</code>.</td>
+        </tr>
+        <tr>
+            <td><code>AddTab(string)</code></td>
+            <td>Creates a new empty tab with the specified title.</td>
+        </tr>
+        <tr>
+            <td><code>AddTab(string, Control)</code></td>
+            <td>Creates a tab and automatically docks the supplied control to fill its contents.</td>
+        </tr>
+        <tr>
+            <td><code>AddTab(string, Bitmap, Control)</code></td>
+            <td>Creates a tab with an image and automatically docks the supplied control.</td>
+        </tr>
+        <tr>
+            <td><code>SelectTab(int)</code></td>
+            <td>Selects a tab by its index.</td>
+        </tr>
+        <tr>
+            <td><code>SelectTab(TabPage)</code></td>
+            <td>Selects the specified tab.</td>
+        </tr>
+        <tr>
+            <td><code>RemoveTab(int)</code></td>
+            <td>Removes the tab at the specified index.</td>
+        </tr>
+        <tr>
+            <td><code>RemoveTab(TabPage)</code></td>
+            <td>Removes the specified tab.</td>
+        </tr>
+        <tr>
+            <td><code>RemoveSelectedTab()</code></td>
+            <td>Removes the currently selected tab.</td>
+        </tr>
+        <tr>
+            <td><code>ClearTabs()</code></td>
+            <td>Removes every tab from the control.</td>
+        </tr>
+        <tr>
+            <td><code>Contains(TabPage)</code></td>
+            <td>Returns whether the specified tab belongs to this control.</td>
+        </tr>
+        <tr>
+            <td><code>IndexOf(TabPage)</code></td>
+            <td>Returns the index of the specified tab.</td>
+        </tr>
+        <tr>
+            <td><code>GetUniqueTabName()</code></td>
+            <td>Generates the next available tab name using <code>NamingConvention</code>.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>Events</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Event</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>TabAdded</code></td>
+            <td>Occurs after a new tab has been created.</td>
+        </tr>
+        <tr>
+            <td><code>TabRemoved</code></td>
+            <td>Occurs after a tab has been removed.</td>
+        </tr>
+        <tr>
+            <td><code>SelectedTabChanged</code></td>
+            <td>Occurs when the selected tab changes.</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="block" id="info">
+    <strong>Tip</strong><br>
+    The <code>AddTab(..., Control)</code> overloads automatically set the
+    control's <code>Dock</code> property to <code>DockStyle.Fill</code> before
+    adding it to the created tab.
+</div>
+
+<br>
+
+<div class="block" id="caution">
+    <strong>Caution</strong><br>
+    Tabs cannot be created through the Windows Forms designer. They must be
+    added programmatically using one of the <code>AddTab()</code> methods.
+</div>

@@ -1,0 +1,91 @@
+<link rel="stylesheet" href="../entry.css" />
+
+<h1>cuiSlider</h1>
+
+<p>
+    A customizable horizontal slider for selecting a value within a specified
+    range.
+</p>
+
+<h2>Important Properties</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Property</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>Value</code></td>
+            <td>
+                Gets or sets the slider's current value. Changing it raises the
+                <code>ValueChanged</code> event.
+            </td>
+        </tr>
+        <tr>
+            <td><code>MinValue</code></td>
+            <td>
+                Specifies the minimum selectable value.
+            </td>
+        </tr>
+        <tr>
+            <td><code>MaxValue</code></td>
+            <td>
+                Specifies the maximum selectable value.
+            </td>
+        </tr>
+        <tr>
+            <td><code>ThumbOutlineThickness</code></td>
+            <td>
+                Controls the thickness of the thumb's outline.
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>Methods</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Method</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>GetProgressPercentage()</code></td>
+            <td>
+                Returns the current slider position as a value between
+                <code>0</code> and <code>1</code>.
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>Events</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Event</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>ValueChanged</code></td>
+            <td>
+                Occurs whenever the <code>Value</code> changes.
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="block" id="caution">
+    <strong>Caution</strong><br>
+    <code>MinValue</code> must be less than <code>MaxValue</code>. Invalid
+    assignments are ignored.
+</div>

@@ -16,17 +16,17 @@ h1 {
 }
 
 p {
-  color: rgb(160, 160, 160);
+  color: #a0a0a0;
   max-width: 80vw;
 }
 
 a {
   text-decoration: none;
-  color: #ffb580;
+  color: #ff4a8f;
 }
 
 a:hover {
-  color: #ff6a00;
+  color: #E00C5C;
 }
 
 .block {
@@ -44,8 +44,8 @@ a:hover {
 
 #warn {
   background-image: url("assets/warn.webp");
-  background-color: rgba(255, 0, 13, 0.075);
-  border-left-color: rgb(248, 31, 49);
+  background-color: #ff000d13;
+  border-left-color: #f81f31;
   padding-top: 3.25rem;
 }
 
@@ -71,21 +71,21 @@ a:hover {
 
 #caution {
   background-image: url("assets/caution.webp");
-  background-color: rgba(255, 115, 0, 0.075);
-  border-left-color: rgb(255, 166, 33);
+  background-color: #ff730013;
+  border-left-color: #ffa621;
   padding-top: 3.25rem;
 }
 
 #info {
   background-image: url("assets/info.webp");
-  background-color: rgba(21, 150, 49, 0.103);
-  border-left-color: rgb(33, 255, 144);
+  background-color: #1596311a;
+  border-left-color: 21ff90;
   padding-top: 3.25rem;
 }
 
 .property {
-  color: rgb(192, 192, 192);
-  background-color: rgb(48, 48, 48);
+  color: #c0c0c0;
+  background-color: #303030;
   box-sizing: border-box;
   display: inline-flex;
   padding: 4px 6px 4px 6px;
@@ -94,18 +94,18 @@ a:hover {
 
 .property p {
   margin: 0;
-  background-color: rgb(31, 31, 31);
+  background-color: #1f1f1f;
   box-sizing: border-box;
   display: inline-flex;
   border-radius: 5px;
   margin-right: 5px;
-  color: rgb(230, 212, 173);
+  color: #e6d4ad;
 }
 
 code {
-  color: rgba(192, 192, 192, 0.75);
-  background-color: rgba(48, 48, 48, 0.5);
-  border: 1px solid rgba(128, 128, 128, 0.096);
+  color: #c0c0c0bf;
+  background-color: #30303080;
+  border: 1px solid #80808018;
   margin-left: 2px;
   margin-right: 1px;
   box-sizing: border-box;
@@ -121,6 +121,7 @@ table {
     border-radius: 4px;
     color: #e0e0e0;
     font-family: sans-serif;
+    margin-bottom: 16px;
 }
 
 th,

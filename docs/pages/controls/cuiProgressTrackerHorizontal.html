@@ -1,0 +1,68 @@
+<link rel="stylesheet" href="../entry.css" />
+
+<h1>cuiProgressTrackerHorizontal</h1>
+
+<p>
+    Displays progress through a sequence of tasks using connected indicators.
+    Completed, current, and remaining tasks are shown with different visual
+    states.
+</p>
+
+<h2>Important Properties</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Property</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>Tasks</code></td>
+            <td>
+                The list of task names displayed by the control.
+            </td>
+        </tr>
+        <tr>
+            <td><code>TasksProgress</code></td>
+            <td>
+                Specifies how many tasks have been completed.
+            </td>
+        </tr>
+        <tr>
+            <td><code>CurrentTask</code></td>
+            <td>
+                Read-only. Returns the name of the current task.
+            </td>
+        </tr>
+        <tr>
+            <td><code>ShowSymbols</code></td>
+            <td>
+                Determines whether completed tasks display a checkmark.
+            </td>
+        </tr>
+        <tr>
+            <td><code>AutoRounding</code></td>
+            <td>
+                Automatically rounds each task indicator into a circle.
+                Disable this to use the <code>Rounding</code> property.
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="block" id="caution">
+    <strong>Caution</strong><br>
+    The control requires at least two tasks. If fewer are provided, nothing is
+    rendered.
+</div>
+
+<br>
+
+<div class="block" id="info">
+    <strong>Tip</strong><br>
+    Set <code>TasksProgress</code> to <code>1</code> to highlight the first
+    task as the current step. Increasing the value marks previous tasks as
+    completed automatically.
+</div>

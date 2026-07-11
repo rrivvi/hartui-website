@@ -1,0 +1,37 @@
+<link rel="stylesheet" href=../entry.css" />
+
+<h1>cuiControlDrag</h1>
+
+<p>
+    Allows a form to be moved by dragging a control instead of the form's title
+    bar. This is primarily intended for borderless windows with custom title bars.
+</p>
+
+<h2>Important Properties</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Property</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>TargetControl</code></td>
+            <td>The control that acts as the drag surface. Dragging this control with the left mouse button moves its parent form.</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="block" id="info">
+    <strong>Tip</strong><br>
+    This component automatically locates the parent form using <code>FindForm()</code>. No additional configuration is required after assigning <code>TargetControl</code>.
+</div>
+
+<br>
+
+<div class="block">
+    <strong>Note</strong><br>
+    Assigning a different <code>TargetControl</code> automatically detaches the component from the previous control and attaches it to the new one.
+</div>

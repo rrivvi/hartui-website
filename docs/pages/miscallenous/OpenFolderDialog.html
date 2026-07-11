@@ -1,0 +1,86 @@
+<link rel="stylesheet" href="../entry.css" />
+
+<h1>OpenFolderDialog</h1>
+
+<p>
+    A modern replacement for <code>FolderBrowserDialog</code> that uses the
+    Windows File Open dialog in folder selection mode. It supports modern UI,
+    multi-selection, and several customization options.
+</p>
+
+<h2>Important Properties</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Property</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>Multiselect</code></td>
+            <td>Allows the user to select multiple folders.</td>
+        </tr>
+        <tr>
+            <td><code>FolderName</code></td>
+            <td>Gets the first selected folder.</td>
+        </tr>
+        <tr>
+            <td><code>FolderNames</code></td>
+            <td>Gets all selected folders.</td>
+        </tr>
+        <tr>
+            <td><code>InputPath</code></td>
+            <td>Specifies the initial folder displayed when the dialog opens.</td>
+        </tr>
+        <tr>
+            <td><code>Title</code></td>
+            <td>Sets the dialog window title.</td>
+        </tr>
+        <tr>
+            <td><code>OkButtonLabel</code></td>
+            <td>Changes the text displayed on the confirmation button.</td>
+        </tr>
+        <tr>
+            <td><code>FileNameLabel</code></td>
+            <td>Changes the label displayed next to the folder name field.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>Methods</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Method</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>ShowDialog()</code></td>
+            <td>Displays the dialog using the application's main window as its owner.</td>
+        </tr>
+        <tr>
+            <td><code>ShowDialog(IntPtr)</code></td>
+            <td>Displays the dialog using the specified window handle as its owner.</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="block" id="info">
+    <strong>Tip</strong><br>
+    This class is public so it can be used independently of
+    <code>cuiOpenFolderDialog</code>. It provides the modern Windows folder
+    picker on both .NET Framework and .NET.
+</div>
+
+<br>
+
+<div class="block">
+    <strong>Note</strong><br>
+    <code>FolderNames</code> always contains every selected folder, while
+    <code>FolderName</code> returns only the first one.
+</div>

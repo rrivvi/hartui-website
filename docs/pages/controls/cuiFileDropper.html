@@ -1,0 +1,109 @@
+<link rel="stylesheet" href="../entry.css" />
+
+<h1>cuiFileDropper</h1>
+
+<p>
+    Accepts files by drag and drop or, optionally, by opening an
+    <code>OpenFileDialog</code> when clicked.
+</p>
+
+<h2>Important Properties</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Property</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>UploadWithClick</code></td>
+            <td>
+                Determines whether clicking the control opens an
+                <code>OpenFileDialog</code>.
+            </td>
+        </tr>
+        <tr>
+            <td><code>Multiselect</code></td>
+            <td>
+                Allows the user to select or drop multiple files at once.
+            </td>
+        </tr>
+        <tr>
+            <td><code>Filter</code></td>
+            <td>
+                Specifies the allowed file types. The same filter is applied to
+                both drag-and-drop and the file dialog.
+            </td>
+        </tr>
+        <tr>
+            <td><code>FileName</code></td>
+            <td>
+                Gets the first selected or dropped file.
+            </td>
+        </tr>
+        <tr>
+            <td><code>FileNames</code></td>
+            <td>
+                Gets all selected or dropped files.
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>Methods</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Method</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>GetExtensionsFromFilter()</code></td>
+            <td>
+                Returns the list of file extensions parsed from the
+                <code>Filter</code> property.
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>Events</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Event</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>FileDropped</code></td>
+            <td>
+                Occurs after one or more valid files have been selected or
+                dropped onto the control.
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="block" id="info">
+    <strong>Tip</strong><br>
+    The <code>FileDroppedEventArgs</code> class always provides a
+    <code>FileNames</code> array, even when only a single file is selected.
+    Use the <code>OneFileDropped</code> property to distinguish between single
+    and multiple file selections.
+</div>
+
+<br>
+
+<div class="block" id="caution">
+    <strong>Caution</strong><br>
+    Files that do not match the <code>Filter</code> property are ignored when
+    dropped onto the control.
+</div>

@@ -1,8 +1,9 @@
 document.addEventListener("DOMContentLoaded", (event) => {
   const n = `
-        <button id="p/home.html" class="e e1 a">Home</button>
+        <button id="pages/home.html" class="e e1 a">Home</button>
         <button id="https://github.com/rrivvi/HartUI" class="e e2 e-o">Repository</button>
         <button id="/docs/index.html" class="e e4 e-o">Docs</button>
+        <button id="/docs/index.html?p=Overview" class="e e5 e-o">Controls</button>
     `;
 
   const h = document.getElementById("h");

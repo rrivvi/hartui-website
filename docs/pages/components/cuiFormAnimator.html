@@ -1,0 +1,75 @@
+<link rel="stylesheet" href="../entry.css" />
+
+<h1>cuiFormAnimator</h1>
+
+<p>
+    Animates a form's <code>Opacity</code> property using configurable easing
+    functions. The animation can play automatically when the form is first shown
+    or be started manually.
+</p>
+
+<h2>Important Properties</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Property</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>TargetForm</code></td>
+            <td>The form whose opacity will be animated.</td>
+        </tr>
+        <tr>
+            <td><code>AnimateOnStart</code></td>
+            <td>Automatically plays the animation the first time the target form is shown.</td>
+        </tr>
+        <tr>
+            <td><code>StartOpacity</code></td>
+            <td>The opacity value at the beginning of the animation. Values are automatically clamped between <code>0</code> and <code>1</code>.</td>
+        </tr>
+        <tr>
+            <td><code>TargetOpacity</code></td>
+            <td>The opacity value when the animation finishes. Values are automatically clamped between <code>0</code> and <code>1</code>.</td>
+        </tr>
+        <tr>
+            <td><code>Duration</code></td>
+            <td>Length of the animation in milliseconds.</td>
+        </tr>
+        <tr>
+            <td><code>EasingType</code></td>
+            <td>Selects the easing function used during the opacity transition.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>Methods</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Method</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>PlayAnimation()</code></td>
+            <td>Starts the opacity animation manually.</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="block" id="caution">
+    <strong>Caution</strong><br>
+    This component only animates the form's <code>Opacity</code>. It does not animate the form's position or size.
+</div>
+
+<br>
+
+<div class="block" id="info">
+    <strong>Tip</strong><br>
+    Set <code>AnimateOnStart</code> to <code>false</code> if you want to control exactly when the animation begins by calling <code>PlayAnimation()</code>.
+</div>

@@ -1,0 +1,49 @@
+<link rel="stylesheet" href="../entry.css" />
+
+<h1>cuiListbox</h1>
+
+<p>
+    A list box with rounded corners, customizable item
+    appearance, and hover highlighting.
+</p>
+
+<h2>Important Properties</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Property</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>Rounding</code></td>
+            <td>Controls the rounding of the list box itself.</td>
+        </tr>
+        <tr>
+            <td><code>ItemRounding</code></td>
+            <td>Controls the rounding applied to individual items.</td>
+        </tr>
+        <tr>
+            <td><code>HoveredIndex</code></td>
+            <td>Gets the index of the item currently under the mouse pointer, or <code>-1</code> if none.</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="block" id="info">
+    <strong>Tip</strong><br>
+    Since <code>cuiListbox</code> inherits from <code>ListBox</code>, you can
+    use the standard <code>Items</code>, <code>SelectedItem</code>,
+    <code>SelectedIndex</code>, and related members as usual.
+</div>
+
+<br>
+
+<div class="block" id="caution">
+    <strong>Caution</strong><br>
+    This control always operates in single-selection mode
+    (<code>SelectionMode.One</code>). Changing the <code>SelectionMode</code>
+    property is not supported.
+</div>

@@ -1,0 +1,71 @@
+<link rel="stylesheet" href="../entry.css" />
+
+<h1>cuiOpenFolderDialog</h1>
+
+<p>
+    Provides access to the modern Windows folder selection dialog as an
+    alternative to the legacy <code>FolderBrowserDialog</code>. Supports custom
+    labels and selecting one or multiple folders.
+</p>
+
+<h2>Important Properties</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Property</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>Title</code></td>
+            <td>Sets the dialog title. Leave empty to use the default system text.</td>
+        </tr>
+        <tr>
+            <td><code>OkButtonLabel</code></td>
+            <td>Changes the text displayed on the confirmation button. Leave empty to use the default system text.</td>
+        </tr>
+        <tr>
+            <td><code>Multiselect</code></td>
+            <td>Allows the user to select multiple folders instead of a single folder.</td>
+        </tr>
+        <tr>
+            <td><code>FolderName</code></td>
+            <td>Contains the first selected folder path after a successful selection.</td>
+        </tr>
+        <tr>
+            <td><code>FolderNames</code></td>
+            <td>Contains all selected folder paths after a successful selection when <code>Multiselect</code> is enabled.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>Methods</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Method</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>ShowDialog()</code></td>
+            <td>Opens the folder selection dialog and returns the user's selection result.</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="block" id="info">
+    <strong>Tip</strong><br>
+    When <code>Multiselect</code> is enabled, use <code>FolderNames</code> instead of <code>FolderName</code> to access all selected folders.
+</div>
+
+<br>
+
+<div class="block">
+    <strong>Note</strong><br>
+    <code>FolderName</code> and <code>FolderNames</code> are updated only after the dialog closes with a successful selection. They retain their previous values if the user cancels the dialog.
+</div>

@@ -1,0 +1,61 @@
+<link rel="stylesheet" href="../entry.css" />
+
+<h1>cuiProgressTrackerVertical</h1>
+
+<p>
+    Displays progress through a sequence of tasks using a vertical step tracker.
+    Completed tasks, the current task, and remaining tasks are visually distinguished.
+</p>
+
+<h2>Important Properties</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Property</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>Tasks</code></td>
+            <td>Specifies the list of task names displayed by the control.</td>
+        </tr>
+        <tr>
+            <td><code>TasksProgress</code></td>
+            <td>Determines how many tasks have been completed.</td>
+        </tr>
+        <tr>
+            <td><code>CurrentTask</code></td>
+            <td>Read-only. Returns the name of the current task.</td>
+        </tr>
+        <tr>
+            <td><code>ShowSymbols</code></td>
+            <td>Determines whether completed tasks display a checkmark.</td>
+        </tr>
+        <tr>
+            <td><code>LineThickness</code></td>
+            <td>Controls the thickness of the connecting lines.</td>
+        </tr>
+        <tr>
+            <td><code>AutoRounding</code></td>
+            <td>Automatically rounds task indicators into circles. Disable this to use the <code>Rounding</code> property.</td>
+        </tr>
+        <tr>
+            <td><code>Rounding</code></td>
+            <td>Controls the corner radius of the task indicators when <code>AutoRounding</code> is disabled.</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="block" id="caution">
+    <strong>Caution</strong><br>
+    The control requires at least two tasks. If fewer than two are provided, nothing is rendered.
+</div>
+
+<br>
+
+<div class="block" id="info">
+    <strong>Tip</strong><br>
+    <code>TasksProgress</code> represents the number of completed tasks. The next task in the sequence is automatically highlighted as the current task.
+</div>

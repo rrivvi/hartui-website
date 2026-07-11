@@ -1,0 +1,137 @@
+<link rel="stylesheet" href="../entry.css" />
+
+<h1>cuiButton</h1>
+
+<p>
+    A customizable button supporting rounded corners, images, toggle behavior,
+    and independent appearance settings for its normal, hovered, pressed, and
+    checked states.
+</p>
+
+<h2>Important Properties</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Property</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>Content</code></td>
+            <td>
+                The text displayed by the button. This property is also exposed
+                through <code>Text</code>.
+            </td>
+        </tr>
+        <tr>
+            <td><code>DialogResult</code></td>
+            <td>
+                Sets the parent form's <code>DialogResult</code> automatically
+                when the button is clicked.
+            </td>
+        </tr>
+        <tr>
+            <td><code>CheckButton</code></td>
+            <td>
+                Enables toggle button behavior using the
+                <code>Checked</code> property.
+            </td>
+        </tr>
+        <tr>
+            <td><code>Checked</code></td>
+            <td>
+                Gets or sets whether the button is currently checked. Changing
+                this property raises the <code>CheckedChanged</code> event.
+            </td>
+        </tr>
+        <tr>
+            <td><code>Image</code></td>
+            <td>
+                Displays an image next to the button text.
+            </td>
+        </tr>
+        <tr>
+            <td><code>ImageExpand</code></td>
+            <td>
+                Adjusts the size of the displayed image. By default, the image is
+                rendered using the current font height.
+            </td>
+        </tr>
+        <tr>
+            <td><code>TextAlignment</code></td>
+            <td>
+                Aligns the button content to the left, center, or right using
+                <code>Near</code>, <code>Center</code>, or
+                <code>Far</code>.
+            </td>
+        </tr>
+        <tr>
+            <td><code>TextSpacing</code></td>
+            <td>
+                Controls the spacing between the image and text.
+            </td>
+        </tr>
+        <tr>
+            <td><code>TextPadding</code></td>
+            <td>
+                Adds padding around the button content. This property is most
+                useful when <code>TextAlignment</code> is
+                <code>Near</code> or <code>Far</code>.
+            </td>
+        </tr>
+        <tr>
+            <td><code>Rounding</code></td>
+            <td>Controls the corner radius of the button.</td>
+        </tr>
+        <tr>
+            <td><code>OutlineThickness</code></td>
+            <td>Specifies the thickness of the button outline.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>Events</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Event</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>CheckedChanged</code></td>
+            <td>
+                Occurs whenever the <code>Checked</code> property changes.
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="block" id="info">
+    <strong>Tip</strong><br>
+    The button exposes separate colors for the background, outline, text, and
+    image tint for each visual state, allowing every state to be customized
+    independently.
+</div>
+
+<br>
+
+<div class="block" id="caution">
+    <strong>Caution</strong><br>
+    The <code>Checked</code> property only changes automatically when
+    <code>CheckButton</code> is enabled. Otherwise, the button behaves like a
+    standard push button.
+</div>
+
+<br>
+
+<div class="block">
+    <strong>Note</strong><br>
+    Setting <code>DialogResult</code> automatically updates the parent form's
+    <code>DialogResult</code> when the button is clicked, making the control
+    suitable for dialog windows without requiring additional code.
+</div>

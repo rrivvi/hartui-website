@@ -1,0 +1,82 @@
+<link rel="stylesheet" href="../entry.css" />
+
+<h1>cuiFolderDropper</h1>
+
+<p>
+    Accepts folders by drag and drop or, optionally, by opening a modern
+    <code>OpenFolderDialog</code> when clicked.
+</p>
+
+<h2>Important Properties</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Property</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>UploadWithClick</code></td>
+            <td>
+                Determines whether clicking the control opens an
+                <code>OpenFolderDialog</code>.
+            </td>
+        </tr>
+        <tr>
+            <td><code>Multiselect</code></td>
+            <td>
+                Allows the user to select or drop multiple folders at once.
+            </td>
+        </tr>
+        <tr>
+            <td><code>FolderName</code></td>
+            <td>
+                Gets the first selected or dropped folder.
+            </td>
+        </tr>
+        <tr>
+            <td><code>FolderNames</code></td>
+            <td>
+                Gets all selected or dropped folders.
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>Events</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Event</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>FolderDropped</code></td>
+            <td>
+                Occurs after one or more valid folders have been selected or
+                dropped onto the control.
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="block" id="info">
+    <strong>Tip</strong><br>
+    The <code>FolderDroppedEventArgs</code> class always provides a
+    <code>FolderNames</code> array, even when only a single folder is selected.
+    Use the <code>OneFolderDropped</code> property to distinguish between single
+    and multiple folder selections.
+</div>
+
+<br>
+
+<div class="block" id="caution">
+    <strong>Caution</strong><br>
+    Files are ignored when dropped onto the control. Only existing folders are
+    accepted.
+</div>

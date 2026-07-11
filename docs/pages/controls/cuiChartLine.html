@@ -1,0 +1,111 @@
+<link rel="stylesheet" href="../entry.css" />
+
+<h1>cuiChartLine</h1>
+
+<p>
+    Displays a customizable single-line chart with optional Bézier curve
+    smoothing, gradient fill, and point value tooltips.
+</p>
+
+<h2>Important Properties</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Property</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>DataPoints</code></td>
+            <td>
+                The values displayed on the chart. At least two data points are
+                recommended for proper rendering.
+            </td>
+        </tr>
+        <tr>
+            <td><code>CustomXAxis</code></td>
+            <td>
+                Replaces the default weekday labels with custom X-axis labels.
+                Leave empty to use the built-in weekday labels.
+            </td>
+        </tr>
+        <tr>
+            <td><code>AutoMaxValue</code></td>
+            <td>
+                Automatically sets <code>MaxValue</code> to the largest value in
+                <code>DataPoints</code>. Enabled by default.
+            </td>
+        </tr>
+        <tr>
+            <td><code>MaxValue</code></td>
+            <td>
+                Sets the maximum value displayed on the Y-axis. Assigning this
+                property automatically disables <code>AutoMaxValue</code>.
+            </td>
+        </tr>
+        <tr>
+            <td><code>UsePercent</code></td>
+            <td>
+                Controls whether Y-axis labels and point tooltips display values
+                as percentages or absolute numbers.
+            </td>
+        </tr>
+        <tr>
+            <td><code>ShortDates</code></td>
+            <td>
+                Uses abbreviated weekday names (<code>Mon</code>,
+                <code>Tue</code>, ...) instead of full names when the default
+                X-axis labels are used.
+            </td>
+        </tr>
+        <tr>
+            <td><code>UseBezier</code></td>
+            <td>
+                Draws smooth Bézier curves instead of straight line segments.
+            </td>
+        </tr>
+        <tr>
+            <td><code>GradientBackground</code></td>
+            <td>
+                Draws a gradient fill beneath the chart line. When disabled, a
+                solid translucent fill is used instead.
+            </td>
+        </tr>
+        <tr>
+            <td><code>ShowLines</code></td>
+            <td>
+                Controls whether horizontal guide lines are displayed.
+            </td>
+        </tr>
+        <tr>
+            <td><code>ChartPadding</code></td>
+            <td>
+                Specifies the padding around the chart drawing area.
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="block" id="info">
+    <strong>Tip</strong><br>
+    Hover the mouse over any data point to display its exact value in a popup.
+</div>
+
+<br>
+
+<div class="block" id="caution">
+    <strong>Caution</strong><br>
+    <code>CustomXAxis</code> must contain either zero labels or at least two.
+    Supplying exactly one label is not supported.
+</div>
+
+<br>
+
+<div class="block">
+    <strong>Note</strong><br>
+    Setting <code>MaxValue</code> automatically disables
+    <code>AutoMaxValue</code>. Re-enable <code>AutoMaxValue</code> if you want
+    the chart to resume scaling itself based on the data.
+</div>

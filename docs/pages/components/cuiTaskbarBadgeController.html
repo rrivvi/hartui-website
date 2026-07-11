@@ -1,0 +1,82 @@
+<link rel="stylesheet" href="../entry.css" />
+
+<h1>cuiTaskbarBadgeController</h1>
+
+<p>
+    Displays an overlay badge on the application's taskbar icon. The badge can
+    either be a custom <code>Image</code> or an automatically generated numeric
+    notification indicator.
+</p>
+
+<h2>Important Properties</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Property</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>TargetForm</code></td>
+            <td>The form whose taskbar icon will display the badge.</td>
+        </tr>
+        <tr>
+            <td><code>Image</code></td>
+            <td>
+                Sets a custom overlay icon. Images are automatically resized to
+                <code>16×16</code> if necessary.
+            </td>
+        </tr>
+        <tr>
+            <td><code>Description</code></td>
+            <td>
+                The accessibility description associated with the overlay icon.
+            </td>
+        </tr>
+        <tr>
+            <td><code>NumericValue</code></td>
+            <td>
+                Displays a numeric badge instead of the custom image when greater
+                than <code>0</code>. Values above <code>9</code> are displayed as
+                <code>9+</code>.
+            </td>
+        </tr>
+        <tr>
+            <td><code>NumericBackColor</code></td>
+            <td>Background color of the generated numeric badge.</td>
+        </tr>
+        <tr>
+            <td><code>NumericForeColor</code></td>
+            <td>Text color of the generated numeric badge.</td>
+        </tr>
+        <tr>
+            <td><code>NumericFont</code></td>
+            <td>Font used when drawing the numeric badge.</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="block" id="info">
+    <strong>Tip</strong><br>
+    Setting <code>NumericValue</code> to a value greater than <code>0</code>
+    temporarily overrides the <code>Image</code> property. Setting it back to
+    <code>0</code> restores the custom image if one has been assigned.
+</div>
+
+<br>
+
+<div class="block" id="caution">
+    <strong>Caution</strong><br>
+    Overlay icons are only supported on compatible versions of Windows. On
+    unsupported systems, the component performs no action.
+</div>
+
+<br>
+
+<div class="block">
+    <strong>Note</strong><br>
+    If no custom image is assigned and <code>NumericValue</code> is
+    <code>0</code> or less, any existing taskbar overlay is removed.
+</div>

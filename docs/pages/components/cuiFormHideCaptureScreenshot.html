@@ -1,0 +1,66 @@
+<link rel="stylesheet" href="../entry.css" />
+
+<h1>cuiFormHideCaptureScreenshot</h1>
+
+<p>
+    Prevents a form from appearing in screenshots and screen recordings by
+    applying a Windows display affinity setting. The exclusion mode can be
+    configured to either hide the window completely or replace it with a black
+    rectangle.
+</p>
+
+<h2>Important Properties</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Property</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>TargetForm</code></td>
+            <td>The form to which the capture exclusion should be applied.</td>
+        </tr>
+        <tr>
+            <td><code>ExclusionType</code></td>
+            <td>Determines how the form appears in screenshots and screen recordings:
+                <ul>
+                    <li><code>Disappear</code> - The window is omitted from the captured image.</li>
+                    <li><code>Black</code> - The window is replaced with a black rectangle.</li>
+                    <li><code>None</code> - Disables capture protection.</li>
+                </ul>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>Methods</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Method</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>RefreshExclusionType()</code></td>
+            <td>Reapplies the current <code>ExclusionType</code> to the target form.</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="block" id="info">
+    <strong>Tip</strong><br>
+    Changing <code>ExclusionType</code> automatically applies the new setting. Calling <code>RefreshExclusionType()</code> is only necessary if the protection needs to be reapplied manually.
+</div>
+
+<br>
+
+<div class="block">
+    <strong>Note</strong><br>
+    When used together with <code>cuiFormRounder</code>, the exclusion setting is automatically applied to both the original form and its rounded host window.
+</div>

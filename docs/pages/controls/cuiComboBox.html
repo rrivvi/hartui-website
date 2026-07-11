@@ -1,0 +1,115 @@
+<link rel="stylesheet" href="../entry.css" />
+
+<h1>cuiComboBox</h1>
+
+<p>
+    A modern combo box that displays its items in a separate rounded popup with
+    a custom scrollbar when necessary.
+</p>
+
+<h2>Important Properties</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Property</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>Items</code></td>
+            <td>
+                The collection of items displayed in the drop-down list.
+            </td>
+        </tr>
+        <tr>
+            <td><code>SelectedIndex</code></td>
+            <td>
+                Gets or sets the index of the currently selected item.
+                A value of <code>-1</code> indicates that no item is selected.
+            </td>
+        </tr>
+        <tr>
+            <td><code>SelectedItem</code></td>
+            <td>
+                Gets or sets the currently selected item by its text.
+                Assigning an empty string clears the selection.
+            </td>
+        </tr>
+        <tr>
+            <td><code>NoSelectionText</code></td>
+            <td>
+                The placeholder text displayed when
+                <code>SelectedIndex</code> is <code>-1</code>.
+            </td>
+        </tr>
+        <tr>
+            <td><code>SortAlphabetically</code></td>
+            <td>
+                Automatically sorts the items alphabetically before opening the
+                drop-down.
+            </td>
+        </tr>
+        <tr>
+            <td><code>MaxDropDownHeight</code></td>
+            <td>
+                Specifies the maximum height of the drop-down before scrolling is
+                enabled.
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>Methods</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Method</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>AddItem(string)</code></td>
+            <td>Adds a new item to the combo box.</td>
+        </tr>
+        <tr>
+            <td><code>RemoveItem(string)</code></td>
+            <td>Removes the first matching item from the combo box.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>Events</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Event</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>SelectedIndexChanged</code></td>
+            <td>Occurs whenever the selected item changes.</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="block" id="caution">
+    <strong>Caution</strong><br>
+    When <code>SortAlphabetically</code> is enabled, the order of
+    <code>Items</code> may change each time the drop-down is opened.
+</div>
+
+<br>
+
+<div class="block">
+    <strong>Note</strong><br>
+    If the currently selected item no longer exists after replacing the
+    <code>Items</code> collection, the first available item is selected
+    automatically.
+</div>

@@ -1,0 +1,87 @@
+<link rel="stylesheet" href="../entry.css" />
+
+<h1>cuiSliderVertical</h1>
+
+<p>
+    A customizable vertical slider for selecting a value within a specified
+    range by dragging the thumb.
+</p>
+
+<h2>Important Properties</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Property</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>Value</code></td>
+            <td>Gets or sets the current slider value.</td>
+        </tr>
+        <tr>
+            <td><code>MinValue</code></td>
+            <td>Specifies the minimum value the slider can represent.</td>
+        </tr>
+        <tr>
+            <td><code>MaxValue</code></td>
+            <td>Specifies the maximum value the slider can represent.</td>
+        </tr>
+        <tr>
+            <td><code>UpsideDown</code></td>
+            <td>Reverses the slider direction so higher values appear at the top instead of the bottom.</td>
+        </tr>
+        <tr>
+            <td><code>ThumbOutlineThickness</code></td>
+            <td>Controls the thickness of the outline drawn around the slider thumb.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>Methods</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Method</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>GetProgressPercentage()</code></td>
+            <td>Returns the current slider position as a value between <code>0</code> and <code>1</code>.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>Events</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Event</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>ValueChanged</code></td>
+            <td>Occurs whenever the <code>Value</code> property changes.</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="block" id="info">
+    <strong>Tip</strong><br>
+    Enable <code>UpsideDown</code> when you want the slider to behave like a traditional vertical volume or progress control, where larger values are positioned at the top.
+</div>
+
+<br>
+
+<div class="block" id="caution">
+    <strong>Caution</strong><br>
+    <code>MinValue</code> must remain smaller than <code>MaxValue</code>. Values assigned outside the valid range are ignored.
+</div>

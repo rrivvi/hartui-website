@@ -1,0 +1,115 @@
+<link rel="stylesheet" href="../entry.css" />
+
+<h1>cuiControlAnimator</h1>
+
+<p>
+    Animates a control's position and/or opacity using configurable easing functions.
+    The animation can start automatically when the control is first displayed, or
+    manually by calling <code>PlayAnimation()</code>.
+</p>
+
+<h2>Important Properties</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Property</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>TargetControl</code></td>
+            <td>The control to animate. Forms are not supported; use <code>cuiFormAnimator</code> instead.</td>
+        </tr>
+        <tr>
+            <td><code>TargetLocation</code></td>
+            <td>The destination location when <code>AnimateLocation</code> is enabled.</td>
+        </tr>
+        <tr>
+            <td><code>AnimateLocation</code></td>
+            <td>Determines whether the control moves to <code>TargetLocation</code> during the animation.</td>
+        </tr>
+        <tr>
+            <td><code>AnimateOpacity</code></td>
+            <td>Animates the control between fully visible and fully transparent by drawing an overlay during painting.</td>
+        </tr>
+        <tr>
+            <td><code>TargetOpacity</code></td>
+            <td>Specifies whether the animation should end with the control visible or transparent.</td>
+        </tr>
+        <tr>
+            <td><code>Duration</code></td>
+            <td>Length of the animation in milliseconds.</td>
+        </tr>
+        <tr>
+            <td><code>EasingType</code></td>
+            <td>Selects the easing function used for the animation.</td>
+        </tr>
+        <tr>
+            <td><code>AnimateOnStart</code></td>
+            <td>Automatically starts the animation after the target control's handle has been created.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>Methods</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Method</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>PlayAnimation()</code></td>
+            <td>Starts the animation. If another animation is already running, the call is ignored.</td>
+        </tr>
+        <tr>
+            <td><code>IsAnimationFinished()</code></td>
+            <td>Returns <code>true</code> when no animation is currently in progress.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>Events</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Event</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>AnimationStarted</code></td>
+            <td>Raised when an animation begins.</td>
+        </tr>
+        <tr>
+            <td><code>AnimationEnded</code></td>
+            <td>Raised after the animation has completed.</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="block" id="caution">
+    <strong>Caution</strong><br>
+    <code>TargetLocation</code> is only used when <code>AnimateLocation</code> is enabled. If location animation is disabled, the control remains in its current position.
+</div>
+
+<br>
+
+<div class="block" id="info">
+    <strong>Tip</strong><br>
+    The same animator instance can be reused by assigning a different <code>TargetControl</code> before calling <code>PlayAnimation()</code>.
+</div>
+
+<br>
+
+<div class="block">
+    <strong>Note</strong><br>
+    Opacity animation is implemented by attaching to the target control's <code>Paint</code> event for the duration of the animation. Once the animation finishes, the event handler is removed automatically.
+</div>

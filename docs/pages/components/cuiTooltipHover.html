@@ -1,0 +1,77 @@
+<link rel="stylesheet" href="../entry.css" />
+
+<h1>cuiTooltipHover</h1>
+
+<p>
+    Displays a customizable tooltip when the mouse pointer hovers over a target
+    control. The tooltip follows the cursor until it leaves the control.
+</p>
+
+<h2>Important Properties</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Property</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>TargetControl</code></td>
+            <td>The control that displays the tooltip when hovered.</td>
+        </tr>
+        <tr>
+            <td><code>Content</code></td>
+            <td>The text displayed inside the tooltip.</td>
+        </tr>
+        <tr>
+            <td><code>TooltipPosition</code></td>
+            <td>
+                Determines where the tooltip is positioned relative to the mouse
+                cursor. Available values are <code>Top</code>,
+                <code>Bottom</code>, <code>Left</code>, <code>Right</code>, and
+                <code>Custom</code>.
+            </td>
+        </tr>
+        <tr>
+            <td><code>TooltipPositionOffset</code></td>
+            <td>
+                Applies an additional position offset. This is primarily useful
+                when <code>TooltipPosition</code> is set to
+                <code>Custom</code>.
+            </td>
+        </tr>
+        <tr>
+            <td><code>ForeColor</code></td>
+            <td>Sets the tooltip text color.</td>
+        </tr>
+        <tr>
+            <td><code>BackColor</code></td>
+            <td>Sets the tooltip background color.</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="block" id="info">
+    <strong>Tip</strong><br>
+    Use <code>TooltipPositionOffset</code> to fine-tune the tooltip location
+    without changing its general placement.
+</div>
+
+<br>
+
+<div class="block" id="caution">
+    <strong>Caution</strong><br>
+    Only one HartUI tooltip can be visible at a time. All
+    <code>cuiTooltipHover</code> components share the same tooltip window and
+    appearance.
+</div>
+
+<br>
+
+<div class="block">
+    <strong>Note</strong><br>
+    The tooltip automatically follows the mouse cursor while it remains over the
+    target control and is hidden as soon as the cursor leaves it.
+</div>

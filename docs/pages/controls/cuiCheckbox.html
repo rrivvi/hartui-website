@@ -1,0 +1,79 @@
+<link rel="stylesheet" href="../entry.css" />
+
+<h1>cuiCheckbox</h1>
+
+<p>
+    A customizable checkbox control with rounded corners, configurable colors,
+    and optional checkmark and cross symbols.
+</p>
+
+<h2>Important Properties</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Property</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>Checked</code></td>
+            <td>Gets or sets whether the checkbox is checked.</td>
+        </tr>
+        <tr>
+            <td><code>Content</code></td>
+            <td>
+                The text displayed next to the checkbox.
+                <code>Text</code> is provided as an alias for this property.
+            </td>
+        </tr>
+        <tr>
+            <td><code>ShowSymbols</code></td>
+            <td>
+                Determines whether the checkbox displays a checkmark when checked
+                and a cross when unchecked.
+            </td>
+        </tr>
+        <tr>
+            <td><code>Rounding</code></td>
+            <td>Controls the corner radius of the checkbox.</td>
+        </tr>
+        <tr>
+            <td><code>OutlineThickness</code></td>
+            <td>Controls the thickness of the checkbox outline.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>Events</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Event</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>CheckedChanged</code></td>
+            <td>Occurs whenever the <code>Checked</code> property changes.</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="block" id="info">
+    <strong>Tip</strong><br>
+    The control overrides the standard <code>Text</code> property, making it an
+    alias of <code>Content</code>. Either property can be used to set the
+    displayed text.
+</div>
+
+<br>
+
+<div class="block">
+    <strong>Note</strong><br>
+    Clicking the control automatically toggles the <code>Checked</code>
+    property and raises the <code>CheckedChanged</code> event.
+</div>

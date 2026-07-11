@@ -1,0 +1,106 @@
+<link rel="stylesheet" href="../entry.css" />
+
+<h1>cuiTextBoxCreditCardNumber</h1>
+
+<p>
+    A specialized text box that automatically formats credit card numbers,
+    detects the card provider, and displays the corresponding card logo.
+</p>
+
+<h2>Important Properties</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Property</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>Content</code></td>
+            <td>Gets or sets the current credit card number. This property is equivalent to <code>Text</code>.</td>
+        </tr>
+        <tr>
+            <td><code>PlaceholderText</code></td>
+            <td>Text displayed when the control is empty and does not have focus.</td>
+        </tr>
+        <tr>
+            <td><code>Company</code></td>
+            <td>Gets the detected card provider.</td>
+        </tr>
+        <tr>
+            <td><code>IsCardValid</code></td>
+            <td>Indicates whether the entered number is long enough to identify a supported card provider.</td>
+        </tr>
+        <tr>
+            <td><code>PasswordChar</code></td>
+            <td>Displays password characters instead of the entered text.</td>
+        </tr>
+        <tr>
+            <td><code>UnderlinedStyle</code></td>
+            <td>Draws only the bottom border instead of a complete outline.</td>
+        </tr>
+        <tr>
+            <td><code>Rounding</code></td>
+            <td>Controls the corner radius of the text box.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>Methods</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Method</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>ResetText()</code></td>
+            <td>Clears the current text and restores the placeholder if applicable.</td>
+        </tr>
+        <tr>
+            <td><code>DetectCardType(string)</code></td>
+            <td>Detects the card provider from the specified card number.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>Events</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Event</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>ContentChanged</code></td>
+            <td>Occurs whenever the entered card number changes.</td>
+        </tr>
+        <tr>
+            <td><code>IsCardValidChanged</code></td>
+            <td>Occurs when the value of <code>IsCardValid</code> changes.</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="block" id="info">
+    <strong>Tip</strong><br>
+    The card logo updates automatically as the user types. The detected
+    provider can also be retrieved through the <code>Company</code> property.
+</div>
+
+<br>
+
+<div class="block" id="caution">
+    <strong>Caution</strong><br>
+    <code>IsCardValid</code> only verifies that the entered number matches the
+    length and prefix of a supported card provider. It does not perform a
+    checksum (Luhn) validation.
+</div>

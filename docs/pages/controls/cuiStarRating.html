@@ -1,0 +1,64 @@
+<link rel="stylesheet" href="../entry.css" />
+
+<h1>cuiStarRating</h1>
+
+<p>
+    Displays a row of stars for selecting or displaying a rating. Supports
+    half-star increments and can optionally be made read-only.
+</p>
+
+<h2>Important Properties</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Property</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>StarCount</code></td>
+            <td>Controls how many stars are displayed.</td>
+        </tr>
+        <tr>
+            <td><code>Rating</code></td>
+            <td>
+                Gets or sets the current rating. The maximum value is
+                <code>StarCount × 2</code>, allowing half-star increments.
+            </td>
+        </tr>
+        <tr>
+            <td><code>AllowUserInteraction</code></td>
+            <td>
+                Determines whether the user can change the rating with the mouse.
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>Events</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Event</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>RatingChanged</code></td>
+            <td>
+                Occurs whenever the <code>Rating</code> property changes.
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="block" id="info">
+    <strong>Tip</strong><br>
+    Ratings use half-star precision. For example, a value of <code>7</code>
+    represents <strong>3.5</strong> stars when <code>StarCount</code> is
+    <code>5</code>.
+</div>

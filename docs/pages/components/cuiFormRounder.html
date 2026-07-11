@@ -1,0 +1,77 @@
+<link rel="stylesheet" href="../entry.css" />
+
+<h1>cuiFormRounder</h1>
+
+<p>
+    Adds rounded corners to borderless forms by creating and managing a companion
+    window that renders the rounded outline. This component is intended for
+    Windows versions that do not provide native rounded window corners.
+</p>
+
+<h2>Important Properties</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Property</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>TargetForm</code></td>
+            <td>The form that should receive rounded corners. Only one <code>cuiFormRounder</code> can be assigned to a form at a time.</td>
+        </tr>
+        <tr>
+            <td><code>Rounding</code></td>
+            <td>Specifies the radius of the form's rounded corners. Setting this property updates the form immediately.</td>
+        </tr>
+        <tr>
+            <td><code>OutlineColor</code></td>
+            <td>Specifies the color of the outline drawn around the rounded form.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>Methods</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Method</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>UpdateRoundedFormRegion()</code></td>
+            <td>Rebuilds the companion window's region to match the current size and shape of the target form.</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="block" id="warn">
+    <strong>Warning</strong><br>
+    Only one <code>cuiFormRounder</code> may be attached to a form. Attempting to assign a second instance to the same form will result in an exception.
+</div>
+
+<br>
+
+<div class="block" id="caution">
+    <strong>Caution</strong><br>
+    The target form's <code>FormBorderStyle</code> is automatically set to <code>None</code> when the component initializes.
+</div>
+
+<br>
+
+<div class="block" id="info">
+    <strong>Tip</strong><br>
+    Pair this component with <code>cuiResizeGrip</code> if you want a borderless form that can still be resized by the user.
+</div>
+
+<br>
+
+<div class="block">
+    <strong>Note</strong><br>
+    Other HartUI components, such as <code>cuiMessageDialog</code> and <code>cuiFormHideCaptureScreenshot</code>, automatically detect and integrate with <code>cuiFormRounder</code> when it is attached to the target form.
+</div>
