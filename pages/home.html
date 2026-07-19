@@ -1,66 +1,48 @@
 <!DOCTYPE html>
 <script src="prevent-wrong-embed.js"></script>
 <link rel="stylesheet" href="../styles.css" />
-<link
-  href="https://fonts.googleapis.com/css?family=Montserrat"
-  rel="stylesheet"
-/>
-<div
-  style="
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" />
+<div style="
     width: 100vw;
     height: calc(100vh);
-    background-image: linear-gradient(
-        to right,
-        rgba(0, 0, 0, 0.05) 1px,
-        transparent 1px
-      ),
-      linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
-    background-size: 32px 32px;
-  "
->
-  <div
-    style="
+    background-image: linear-gradient(to right, oklch(25% .03 40 / .06) 1px, #0000 1px), linear-gradient(oklch(25% .03 40 / .06) 1px, #0000 1px);
+    background-size: 48px 48px;
+  ">
+  <div style="
       position: absolute;
       width: 55%;
       left: 22.5%;
       top: calc(50% - 45px);
       transform: translateY(-50%);
       text-align: center;
-    "
-  >
-    <img src="technologies.webp" id="t"/>
+    ">
+    <div id="technologies">
+      <p>.NET 4.7.2+</p>
+      <p>.NET 8.0+</p>
+      <p class="unlicense">Unlicense</p>
+    </div>
     <img src="headline.svg" style="width: 100%" />
     <!-- <p>Stretch WinForms to its modern glory!</p> -->
     <p>💥Stretch WinForms to its modern glory!😼</p>
-    
-    <button
-      style="
+
+    <button style="
         background: #004980;
         background-image: url('nuget.webp');
         display: inline-block;
-      "
-      onclick="top.location = `https://www.nuget.org/packages/HartUI.Winforms`"
-    ></button>
-    <div style="background: #bebebe;border-radius: 2px;width: 4px;height: 4px;margin: 0 auto;display: inline-block;transform: translateY(-20px);"></div>
-    <button
-      style="
+      " onclick="top.location = `https://www.nuget.org/packages/HartUI.Winforms`"></button>
+    <div
+      style="background: #bebebe;border-radius: 2px;width: 4px;height: 4px;margin: 0 auto;display: inline-block;transform: translateY(-20px);">
+    </div>
+    <button style="
         background: black;
         background-image: url('github.webp');
         display: inline-block;
-      "
-      onclick="top.location = `https://github.com/rrivvi/HartUI`"
-    ></button>
+      " onclick="top.location = `https://github.com/rrivvi/HartUI`"></button>
 
 
     <div style="height: 24px; margin: 0">
-      <img
-        src="download.webp"
-        style="width: 16px; display: inline-block; vertical-align: middle"
-      />
-      <p
-        id="c"
-        style="display: inline-block; vertical-align: middle; margin: 0"
-      >
+      <img src="download.webp" style="width: 16px; display: inline-block; vertical-align: middle" />
+      <p id="c" style="display: inline-block; vertical-align: middle; margin: 0">
         ████
       </p>
     </div>
@@ -69,71 +51,83 @@
 </div>
 
 <script>
-    let k1 = 0;
-  let k2 = 0;
-  let k3 = -52;
-  let k4 = false;
+  let downloads = 0;
+  let shown = 0;
+  let prev = -52;
+  let loaded = false;
   const c = document.getElementById("c");
 
-  async function t() {
-    const d = await g("HartUI.Winforms");
-    if (d !== -1)
-  {
-     k1 = d;
-     k4 = true;
-     document.cookie = `cached-downloads=${k1}; max-age=3600; path=/`;
+  async function load() {
+    const count = await fetchDownloads("HartUI.Winforms");
+    if (count !== -1) {
+      downloads = count;
+      loaded = true;
+      document.cookie = `cached-downloads=${downloads}; max-age=3600; path=/`;
+    }
   }
-  }
-  async function g(p) {
-    const u = "https://api.nuget.org/v3/index.json";
+
+  async function fetchDownloads(pkg) {
+    const index = "https://api.nuget.org/v3/index.json";
+
     try {
-      const r = await fetch(u);
-      if (!r.ok) return;
-      const j = await r.json(),
-        s = j.resources.find((r) => r["@type"] === "SearchQueryService");
-      if (!s) return;
-      const q = `${s["@id"]}?q=packageid:${p}`,
-        f = await fetch(q);
-      if (!f.ok) return;
-      const d = await f.json(),
-        pkg = d.data[0];
-      if (!d.totalHits || !pkg) return;
-      if (pkg.totalDownloads == null || pkg.totalDownloads < 0) return;
-      return pkg.totalDownloads;
-    } catch (e) {}
+      const res = await fetch(index);
+      if (!res.ok) return -1;
+
+      const json = await res.json();
+      const api = json.resources.find(
+        r => r["@type"] === "SearchQueryService"
+      );
+      if (!api) return -1;
+
+      const res2 = await fetch(
+        `${api["@id"]}?q=packageid:${pkg}`
+      );
+      if (!res2.ok) return -1;
+
+      const data = await res2.json();
+      const item = data.data[0];
+
+      if (!data.totalHits || !item) return -1;
+      if (item.totalDownloads == null || item.totalDownloads < 0) return -1;
+
+      return item.totalDownloads;
+    } catch {
+      return -1;
+    }
   }
 
-  function getCookie(name) {
-  const value = `; ${document.cookie}`;
-  const parts = value.split(`; ${name}=`);
-  if (parts.length === 2) return parts.pop().split(';').shift();
-  return null;
-}
+  function cookie(name) {
+    const parts = `; ${document.cookie}`.split(`; ${name}=`);
+    return parts.length === 2 ? parts.pop().split(";").shift() : null;
+  }
 
-k1 = getCookie('cached-downloads');
-k1 = k1 ? parseInt(k1, 10) : 0;
-if (k1 && k1 > 1) {
-  k4 = true;
-} else {
-  t();
-}
+  downloads = parseInt(cookie("cached-downloads"), 10) || 0;
 
-  function k() {
+  if (downloads > 1) {
+    loaded = true;
+  } else {
+    load();
+  }
+
+  function animate() {
     setTimeout(() => {
-      const n = Math.round((k2 * 4 + k1) / 5);
-      if (n === k3) {
-        if (k4 && n === k2) {
-          c.textContent = k1;
-          return;
-        }
+      const next = Math.round((shown * 4 + downloads) / 5);
+
+      if (next === prev && loaded && next === shown) {
+        c.textContent = downloads;
+        return;
       }
-      k3 = n;
-      k2 = k3;
-      if (k1 !== 0) {
-        c.textContent = k2;
+
+      prev = next;
+      shown = next;
+
+      if (downloads) {
+        c.textContent = shown;
       }
-      k();
+
+      animate();
     }, 16);
   }
-  k();
+
+  animate();
 </script>

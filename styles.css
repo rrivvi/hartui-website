@@ -5,7 +5,7 @@
 }
 
 body {
-  background: #fff8f5;
+  background: #FEF4E7;
   margin: 0;
 }
 
@@ -16,14 +16,17 @@ body {
 }
 
 header {
-  background: black;
+  background: #FEF4E7;
   height: 90px;
 }
 
 nav {
   margin: 0 22.5px 0 22.5px;
-  transform: translate(65px, 22.5px);
+  transform: translate(0, 22.5px);
   height: 45px;
+  display:flex;
+  gap: 4px;
+  justify-content: center;
 }
 
 header img {
@@ -94,6 +97,12 @@ button.a {
   background-repeat: no-repeat;
   background-size: 16px;
   padding-bottom: 2px;
+  background-color: rgb(0, 0, 0);
+}
+
+.e:hover{
+  filter: none;
+  opacity: 0.8;
 }
 
 .e1 {
@@ -113,7 +122,7 @@ button.a {
 
 .e4 {
   background-position: 46px 14px;
-  background-image: url('logo.webp');
+  background-image: url('logo-rounded.webp');
 }
 
 .e5 {
@@ -154,6 +163,26 @@ button {
   }
 }
 
-#t {
-  animation: infinite fadeIn 1.5s;
+#technologies {
+  display: inline-flex;
+  gap: 8px;
+  user-select: none;
+}
+
+#technologies>p {
+  height: 20px;
+  background-color: #FAECDD;
+  border: 1px solid #DECEBC;
+  color: rgb(94, 81, 78);
+  font-size: 14px;
+  padding: 4px 7px 3px 8px;
+  border-radius: 14px;
+  margin-bottom: 0;
+}
+
+.unlicense
+{
+  background-color: #E00C5C !important;
+  border: 1px solid #b82964 !important;
+  color: rgb(255, 255, 255) !important;
 }
