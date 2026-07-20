@@ -157,6 +157,10 @@ code {
   display: inline-block;
 }
 
+h1, h2, h3 {
+    scroll-margin-top: 24px;
+}
+
 h1>button,
 h2>button,
 h3>button {
@@ -168,8 +172,14 @@ h3>button {
   background: none;
   background-image: url('../link.webp');
   filter: grayscale();
-  opacity: 0.5;
+  opacity: 0;
   cursor: pointer;
+}
+
+h1:hover>button,
+h2:hover>button,
+h3:hover>button {
+    opacity: 1;
 }
 
 h2>button {

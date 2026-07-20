@@ -114,7 +114,7 @@ main.onload = () => {
 
       const but = document.createElement("button")
       h.appendChild(but);
-      but.title = "Copy link: \"" + h.textContent + "\"";
+      but.title = "Copy link";
 
       but.onclick = () => {
         const url = new URL(window.location);
