@@ -24,18 +24,16 @@ function processSections(sectionsArray) {
   createControls(trimEntry(sectionsArray[2]));
   createMiscallenous(trimEntry(sectionsArray[3]));
 
-  if (
-    window.location.search.startsWith("?p=") &&
-    !window.location.search.includes("/")
-  ) {
-    let pageName = window.location.search.split("?p=")[1];
-    main.src = "/docs/pages/" + pageName + ".html";
-  } else {
-    const url = new URL(location);
-    url.searchParams.set("p", introductionSection.firstChild.textContent);
-    history.pushState({}, "", url);
-    main.src = "/docs/pages/" + introductionSection.firstChild.textContent + ".html";
+  const url = new URL(location);
+  const pageName = url.searchParams.get("p") || introductionSection.firstChild.textContent;
+  const hash = url.hash || "";
+
+  if (!url.searchParams.get("p")) {
+    url.searchParams.set("p", pageName);
+    history.replaceState({}, "", url);
   }
+
+  main.src = `/docs/pages/${pageName}.html${hash}`;
 }
 
 let componentsSection = document.getElementById("l1");
@@ -68,21 +66,17 @@ function addToSection(entriesList, targetSection) {
     const newListEntry = document.createElement("li");
     newListEntry.innerText = entriesList[i];
     newListEntry.onclick = (e) => {
-      if (targetSection === componentsSection)
-      {
-        onButtonNavigated ("components/" + entriesList[i]);
+      if (targetSection === componentsSection) {
+        onButtonNavigated("components/" + entriesList[i]);
       }
-      else if (targetSection === controlsSection)
-      {
-        onButtonNavigated ("controls/" + entriesList[i]);
+      else if (targetSection === controlsSection) {
+        onButtonNavigated("controls/" + entriesList[i]);
       }
-      else if (targetSection === miscallenousSection)
-      {
-        onButtonNavigated ("miscallenous/" + entriesList[i]);
+      else if (targetSection === miscallenousSection) {
+        onButtonNavigated("miscallenous/" + entriesList[i]);
       }
-      else
-      {
-        onButtonNavigated (entriesList[i]);
+      else {
+        onButtonNavigated(entriesList[i]);
       }
 
     };
@@ -91,15 +85,72 @@ function addToSection(entriesList, targetSection) {
 }
 
 function onButtonNavigated(target) {
-  main.src = "/docs/pages/" + target + ".html";
+  loadDoc(target);
+}
+
+function loadDoc(page, hash = "") {
+  main.src = `/docs/pages/${page}.html${hash}`;
   const url = new URL(location);
-  url.searchParams.set("p", target);
+  url.searchParams.set("p", page);
+  url.hash = hash;
   history.pushState({}, "", url);
-  console.log("redirecting to " + main.src);
 }
 
 function trimEntry(uns) {
   return uns.trim().split("\r\n");
 }
+
+main.onload = () => {
+  const doc = main.contentDocument;
+
+  doc.querySelectorAll("h1,h2,h3,h4").forEach(h => {
+    if (!h.id) {
+      h.id = h.textContent
+        .trim()
+        .toLowerCase()
+        .replace(/[^\w]+/g, "-");
+
+      h.style = "display: inline-flex;";
+
+      const but = document.createElement("button")
+      h.appendChild(but);
+      but.title = "Copy link: \"" + h.textContent + "\"";
+
+      but.onclick = () => {
+        const url = new URL(window.location);
+        url.hash = h.id;
+
+        navigator.clipboard.writeText(url.toString());
+      };
+    }
+  });
+
+  const hash = window.location.hash;
+
+  if (hash) {
+    const target = doc.querySelector(hash);
+
+    if (target) {
+      target.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    }
+  }
+};
+
+window.addEventListener("hashchange", () => {
+  const doc = main.contentDocument;
+  if (!doc) return;
+
+  if (!location.hash) {
+    return;
+  }
+
+  const target = doc.querySelector(location.hash);
+  target?.scrollIntoView({
+    behavior: "smooth"
+  });
+});
 
 fetch_and_process_list();
