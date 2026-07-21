@@ -1,0 +1,1719 @@
+[
+  {
+    "FileName": "cuiControlAnimator.html",
+    "RelativePath": "components/cuiControlAnimator.html",
+    "Kind": "Components",
+    "Header": "cuiControlAnimator",
+    "Summary": "Animates a control's position and/or opacity using configurable easing\nfunctions. Animations can start automatically when the target control is\nfirst shown or manually by calling PlayAnimation().",
+    "Properties": [
+      {
+        "Name": "TargetControl",
+        "Description": "The control to animate. Forms are not supported; use cuiFormAnimator instead."
+      },
+      {
+        "Name": "TargetLocation",
+        "Description": "The destination location when AnimateLocation is enabled."
+      },
+      {
+        "Name": "AnimateLocation",
+        "Description": "Determines whether the control moves to TargetLocation during the animation."
+      },
+      {
+        "Name": "AnimateOpacity",
+        "Description": "Animates the control between fully visible and fully transparent by drawing an overlay during painting."
+      },
+      {
+        "Name": "TargetOpacity",
+        "Description": "Specifies whether the animation should end with the control visible or transparent."
+      },
+      {
+        "Name": "Duration",
+        "Description": "Length of the animation in milliseconds."
+      },
+      {
+        "Name": "EasingType",
+        "Description": "Selects the easing function used for the animation."
+      },
+      {
+        "Name": "AnimateOnStart",
+        "Description": "Automatically starts the animation when the target control is first created."
+      },
+      {
+        "Name": "IsAnimating",
+        "Description": "Indicates whether an animation is currently running."
+      }
+    ],
+    "Methods": [
+      {
+        "Name": "PlayAnimation()",
+        "Description": "Starts the animation. If another animation is already running, the call is ignored."
+      },
+      {
+        "Name": "CancelAnimation()",
+        "Description": "Immediately cancels the current animation, leaving the control at its current state."
+      }
+    ],
+    "Events": [
+      {
+        "Name": "AnimationStarted",
+        "Description": "Raised when an animation begins."
+      },
+      {
+        "Name": "AnimationEnded",
+        "Description": "Raised after an animation completes normally."
+      }
+    ]
+  },
+  {
+    "FileName": "cuiControlBlur.html",
+    "RelativePath": "components/cuiControlBlur.html",
+    "Kind": "Components",
+    "Header": "cuiControlBlur",
+    "Summary": "Applies a blur effect to an existing control by intercepting its paint\noperation. The blurred image is cached and automatically regenerated whenever\nthe control's contents change.",
+    "Properties": [
+      {
+        "Name": "TargetControl",
+        "Description": "The control that should be blurred. Forms are not supported."
+      },
+      {
+        "Name": "BlurAmount",
+        "Description": "Controls the strength of the blur. Larger values produce a stronger blur effect."
+      }
+    ],
+    "Methods": [],
+    "Events": []
+  },
+  {
+    "FileName": "cuiControlDrag.html",
+    "RelativePath": "components/cuiControlDrag.html",
+    "Kind": "Components",
+    "Header": "cuiControlDrag",
+    "Summary": "Allows a form to be moved by dragging a control instead of the form's title\nbar. This is primarily intended for borderless windows with custom title bars.",
+    "Properties": [
+      {
+        "Name": "TargetControl",
+        "Description": "The control that acts as the drag surface. Dragging this control with the left mouse button moves its parent form."
+      }
+    ],
+    "Methods": [],
+    "Events": []
+  },
+  {
+    "FileName": "cuiFormAnimator.html",
+    "RelativePath": "components/cuiFormAnimator.html",
+    "Kind": "Components",
+    "Header": "cuiFormAnimator",
+    "Summary": "Animates a form's Opacity property using configurable easing\nfunctions. The animation can play automatically when the form is first shown\nor be started manually.",
+    "Properties": [
+      {
+        "Name": "TargetForm",
+        "Description": "The form whose opacity will be animated."
+      },
+      {
+        "Name": "AnimateOnStart",
+        "Description": "Automatically plays the animation the first time the target form is shown."
+      },
+      {
+        "Name": "StartOpacity",
+        "Description": "The opacity value at the beginning of the animation. Values are automatically clamped between 0 and 1."
+      },
+      {
+        "Name": "TargetOpacity",
+        "Description": "The opacity value when the animation finishes. Values are automatically clamped between 0 and 1."
+      },
+      {
+        "Name": "Duration",
+        "Description": "Length of the animation in milliseconds."
+      },
+      {
+        "Name": "EasingType",
+        "Description": "Selects the easing function used during the opacity transition."
+      }
+    ],
+    "Methods": [
+      {
+        "Name": "PlayAnimation()",
+        "Description": "Starts the opacity animation manually."
+      }
+    ],
+    "Events": []
+  },
+  {
+    "FileName": "cuiFormDrag.html",
+    "RelativePath": "components/cuiFormDrag.html",
+    "Kind": "Components",
+    "Header": "cuiFormDrag",
+    "Summary": "Allows the user to move a form by dragging anywhere on its surface. This\ncomponent is primarily intended for borderless windows.",
+    "Properties": [
+      {
+        "Name": "TargetForm",
+        "Description": "The form that should respond to drag operations."
+      }
+    ],
+    "Methods": [],
+    "Events": []
+  },
+  {
+    "FileName": "cuiFormHideCaptureScreenshot.html",
+    "RelativePath": "components/cuiFormHideCaptureScreenshot.html",
+    "Kind": "Components",
+    "Header": "cuiFormHideCaptureScreenshot",
+    "Summary": "Prevents a form from appearing in screenshots and screen recordings by\napplying a Windows display affinity setting. The exclusion mode can be\nconfigured to either hide the window completely or replace it with a black\nrectangle.",
+    "Properties": [
+      {
+        "Name": "TargetForm",
+        "Description": "The form to which the capture exclusion should be applied."
+      },
+      {
+        "Name": "ExclusionType",
+        "Description": "Determines how the form appears in screenshots and screen recordings:\n- Disappear - The window is omitted from the captured image.\n- Black - The window is replaced with a black rectangle.\n- None - Disables capture protection."
+      }
+    ],
+    "Methods": [
+      {
+        "Name": "RefreshExclusionType()",
+        "Description": "Reapplies the current ExclusionType to the target form."
+      }
+    ],
+    "Events": []
+  },
+  {
+    "FileName": "cuiFormRounder.html",
+    "RelativePath": "components/cuiFormRounder.html",
+    "Kind": "Components",
+    "Header": "cuiFormRounder",
+    "Summary": "Adds rounded corners to borderless forms by creating and managing a companion\nwindow that renders the rounded outline. This component is intended for\nWindows versions that do not provide native rounded window corners.",
+    "Properties": [
+      {
+        "Name": "TargetForm",
+        "Description": "The form that should receive rounded corners. Only one cuiFormRounder can be assigned to a form at a time."
+      },
+      {
+        "Name": "Rounding",
+        "Description": "Specifies the radius of the form's rounded corners. Setting this property updates the form immediately."
+      },
+      {
+        "Name": "OutlineColor",
+        "Description": "Specifies the color of the outline drawn around the rounded form."
+      }
+    ],
+    "Methods": [
+      {
+        "Name": "UpdateRoundedFormRegion()",
+        "Description": "Rebuilds the companion window's region to match the current size and shape of the target form."
+      }
+    ],
+    "Events": []
+  },
+  {
+    "FileName": "cuiMessageDialog.html",
+    "RelativePath": "components/cuiMessageDialog.html",
+    "Kind": "Components",
+    "Header": "cuiMessageDialog",
+    "Summary": "Displays a modern customizable message dialog while preventing interaction\nwith the parent form until the user selects an option. The dialog supports\ncommon MessageBoxButtons layouts and returns a standard\nDialogResult.",
+    "Properties": [
+      {
+        "Name": "DimColor",
+        "Description": "The color and opacity of the overlay applied behind the dialog while it is open."
+      },
+      {
+        "Name": "DialogSize",
+        "Description": "The default size of the dialog window. The height can automatically increase when the displayed text requires additional space."
+      },
+      {
+        "Name": "DialogPadding",
+        "Description": "The padding applied between the dialog content and its edges."
+      },
+      {
+        "Name": "ButtonSize",
+        "Description": "Controls the size of the buttons displayed inside the dialog."
+      },
+      {
+        "Name": "Rounding",
+        "Description": "Controls the corner radius of the dialog window."
+      },
+      {
+        "Name": "BackColor",
+        "Description": "The dialog background color."
+      },
+      {
+        "Name": "ForeColor",
+        "Description": "The dialog text color."
+      },
+      {
+        "Name": "OKText",
+        "Description": "The text displayed on the OK button."
+      },
+      {
+        "Name": "YesText",
+        "Description": "The text displayed on the Yes button."
+      },
+      {
+        "Name": "NoText",
+        "Description": "The text displayed on the No button."
+      },
+      {
+        "Name": "CancelText",
+        "Description": "The text displayed on the Cancel button."
+      }
+    ],
+    "Methods": [
+      {
+        "Name": "ShowDialog(Form parentForm, string description, string title = \"\")",
+        "Description": "Displays a dialog containing the specified message using an OK button."
+      },
+      {
+        "Name": "ShowDialog(Form parentForm, string description, string title, MessageBoxButtons messageBoxButtons)",
+        "Description": "Displays a dialog using the specified button layout and returns the user's selection."
+      }
+    ],
+    "Events": []
+  },
+  {
+    "FileName": "cuiOpenFolderDialog.html",
+    "RelativePath": "components/cuiOpenFolderDialog.html",
+    "Kind": "Components",
+    "Header": "cuiOpenFolderDialog",
+    "Summary": "Provides access to the modern Windows folder selection dialog as an\nalternative to the legacy FolderBrowserDialog. Supports custom\nlabels and selecting one or multiple folders.",
+    "Properties": [
+      {
+        "Name": "Title",
+        "Description": "Sets the dialog title. Leave empty to use the default system text."
+      },
+      {
+        "Name": "OkButtonLabel",
+        "Description": "Changes the text displayed on the confirmation button. Leave empty to use the default system text."
+      },
+      {
+        "Name": "Multiselect",
+        "Description": "Allows the user to select multiple folders instead of a single folder."
+      },
+      {
+        "Name": "FolderName",
+        "Description": "Contains the first selected folder path after a successful selection."
+      },
+      {
+        "Name": "FolderNames",
+        "Description": "Contains all selected folder paths after a successful selection when Multiselect is enabled."
+      }
+    ],
+    "Methods": [
+      {
+        "Name": "ShowDialog()",
+        "Description": "Opens the folder selection dialog and returns the user's selection result."
+      }
+    ],
+    "Events": []
+  },
+  {
+    "FileName": "cuiTaskbarBadgeController.html",
+    "RelativePath": "components/cuiTaskbarBadgeController.html",
+    "Kind": "Components",
+    "Header": "cuiTaskbarBadgeController",
+    "Summary": "Displays an overlay badge on the application's taskbar icon. The badge can\neither be a custom Image or an automatically generated numeric\nnotification indicator.",
+    "Properties": [
+      {
+        "Name": "TargetForm",
+        "Description": "The form whose taskbar icon will display the badge."
+      },
+      {
+        "Name": "Image",
+        "Description": "Sets a custom overlay icon. Images are automatically resized to\n16×16 if necessary."
+      },
+      {
+        "Name": "Description",
+        "Description": "The accessibility description associated with the overlay icon."
+      },
+      {
+        "Name": "NumericValue",
+        "Description": "Displays a numeric badge instead of the custom image when greater\nthan 0. Values above 9 are displayed as\n9+."
+      },
+      {
+        "Name": "NumericBackColor",
+        "Description": "Background color of the generated numeric badge."
+      },
+      {
+        "Name": "NumericForeColor",
+        "Description": "Text color of the generated numeric badge."
+      },
+      {
+        "Name": "NumericFont",
+        "Description": "Font used when drawing the numeric badge."
+      }
+    ],
+    "Methods": [],
+    "Events": []
+  },
+  {
+    "FileName": "cuiTaskbarStateController.html",
+    "RelativePath": "components/cuiTaskbarStateController.html",
+    "Kind": "Components",
+    "Header": "cuiTaskbarStateController",
+    "Summary": "Controls the appearance of the application's taskbar button by displaying a\nprogress indicator or changing its state to indicate paused or failed\noperations.",
+    "Properties": [
+      {
+        "Name": "TargetForm",
+        "Description": "The form whose taskbar button will be updated."
+      },
+      {
+        "Name": "State",
+        "Description": "Selects the taskbar progress state. Available values are\nProgress, Paused,\nError, and Default."
+      },
+      {
+        "Name": "ProgressValue",
+        "Description": "The current progress value displayed when the\nState is not Default."
+      },
+      {
+        "Name": "MaxValue",
+        "Description": "Specifies the maximum progress value used to calculate the taskbar\nprogress percentage."
+      }
+    ],
+    "Methods": [
+      {
+        "Name": "Flash()",
+        "Description": "Continuously flashes the application's taskbar button until the\nwindow receives focus, helping draw the user's attention."
+      }
+    ],
+    "Events": []
+  },
+  {
+    "FileName": "cuiTooltipHover.html",
+    "RelativePath": "components/cuiTooltipHover.html",
+    "Kind": "Components",
+    "Header": "cuiTooltipHover",
+    "Summary": "Displays a customizable tooltip when the mouse pointer hovers over a target\ncontrol. The tooltip follows the cursor until it leaves the control.",
+    "Properties": [
+      {
+        "Name": "TargetControl",
+        "Description": "The control that displays the tooltip when hovered."
+      },
+      {
+        "Name": "Content",
+        "Description": "The text displayed inside the tooltip."
+      },
+      {
+        "Name": "TooltipPosition",
+        "Description": "Determines where the tooltip is positioned relative to the mouse\ncursor. Available values are Top,\nBottom, Left, Right, and\nCustom."
+      },
+      {
+        "Name": "TooltipPositionOffset",
+        "Description": "Applies an additional position offset. This is primarily useful\nwhen TooltipPosition is set to\nCustom."
+      },
+      {
+        "Name": "ForeColor",
+        "Description": "Sets the tooltip text color."
+      },
+      {
+        "Name": "BackColor",
+        "Description": "Sets the tooltip background color."
+      }
+    ],
+    "Methods": [],
+    "Events": []
+  },
+  {
+    "FileName": "cuiButton.html",
+    "RelativePath": "controls/cuiButton.html",
+    "Kind": "Controls",
+    "Header": "cuiButton",
+    "Summary": "A customizable button supporting rounded corners, images, toggle behavior,\nand independent appearance settings for its normal, hovered, pressed, and\nchecked states.",
+    "Properties": [
+      {
+        "Name": "Content",
+        "Description": "The text displayed by the button. This property is also exposed\nthrough Text."
+      },
+      {
+        "Name": "DialogResult",
+        "Description": "Sets the parent form's DialogResult automatically\nwhen the button is clicked."
+      },
+      {
+        "Name": "CheckButton",
+        "Description": "Enables toggle button behavior using the\nChecked property."
+      },
+      {
+        "Name": "Checked",
+        "Description": "Gets or sets whether the button is currently checked. Changing\nthis property raises the CheckedChanged event."
+      },
+      {
+        "Name": "Image",
+        "Description": "Displays an image next to the button text."
+      },
+      {
+        "Name": "ImageExpand",
+        "Description": "Adjusts the size of the displayed image. By default, the image is\nrendered using the current font height."
+      },
+      {
+        "Name": "TextAlignment",
+        "Description": "Aligns the button content to the left, center, or right using\nNear, Center, or\nFar."
+      },
+      {
+        "Name": "TextSpacing",
+        "Description": "Controls the spacing between the image and text."
+      },
+      {
+        "Name": "TextPadding",
+        "Description": "Adds padding around the button content. This property is most\nuseful when TextAlignment is\nNear or Far."
+      },
+      {
+        "Name": "Rounding",
+        "Description": "Controls the corner radius of the button."
+      },
+      {
+        "Name": "OutlineThickness",
+        "Description": "Specifies the thickness of the button outline."
+      }
+    ],
+    "Methods": [],
+    "Events": [
+      {
+        "Name": "CheckedChanged",
+        "Description": "Occurs whenever the Checked property changes."
+      }
+    ]
+  },
+  {
+    "FileName": "cuiButtonGroup.html",
+    "RelativePath": "controls/cuiButtonGroup.html",
+    "Kind": "Controls",
+    "Header": "cuiButtonGroup",
+    "Summary": "A customizable radio button that automatically unchecks other\ncuiButtonGroup controls belonging to the same group within the\nsame parent container.",
+    "Properties": [
+      {
+        "Name": "Content",
+        "Description": "The text displayed by the button. This property is also exposed\nthrough Text."
+      },
+      {
+        "Name": "Group",
+        "Description": "Determines which cuiButtonGroup controls behave as a\nsingle radio button group. Only controls with the same\nGroup value affect each other."
+      },
+      {
+        "Name": "Checked",
+        "Description": "Gets or sets whether this button is currently selected. Changing\nthis property raises the CheckedChanged event."
+      },
+      {
+        "Name": "Image",
+        "Description": "Displays an image next to the button text."
+      },
+      {
+        "Name": "ImageExpand",
+        "Description": "Adjusts the size of the displayed image. By default, the image is\nrendered using the current font height."
+      },
+      {
+        "Name": "TextAlignment",
+        "Description": "Aligns the button content to the left, center, or right using\nNear, Center, or\nFar."
+      },
+      {
+        "Name": "TextSpacing",
+        "Description": "Controls the spacing between the image and text."
+      },
+      {
+        "Name": "TextPadding",
+        "Description": "Adds padding around the button content. This property is most\nuseful when TextAlignment is\nNear or Far."
+      },
+      {
+        "Name": "Rounding",
+        "Description": "Controls the corner radius of the button."
+      },
+      {
+        "Name": "OutlineThickness",
+        "Description": "Specifies the thickness of the button outline."
+      }
+    ],
+    "Methods": [
+      {
+        "Name": "PerformClick()",
+        "Description": "Programmatically selects the button, updates the rest of its\ngroup, and raises the Click event."
+      }
+    ],
+    "Events": [
+      {
+        "Name": "CheckedChanged",
+        "Description": "Occurs whenever the Checked property changes."
+      }
+    ]
+  },
+  {
+    "FileName": "cuiCalendarDatePicker.html",
+    "RelativePath": "controls/cuiCalendarDatePicker.html",
+    "Kind": "Controls",
+    "Header": "cuiCalendarDatePicker",
+    "Summary": "A button-like control that displays the currently selected date. Clicking\nthe control opens the HartUI date picker dialog, allowing the user to select\na new date.",
+    "Properties": [
+      {
+        "Name": "Content",
+        "Description": "Gets or sets the selected date. The time portion is discarded,\nleaving only the date."
+      },
+      {
+        "Name": "Theme",
+        "Description": "Specifies whether the date picker dialog opens using the\nLight or Dark theme."
+      },
+      {
+        "Name": "EnableThemeChangeButton",
+        "Description": "Determines whether the dialog displays a button that allows the\nuser to switch between light and dark themes."
+      },
+      {
+        "Name": "PickerPosition",
+        "Description": "Controls where the date picker dialog appears relative to the\ncontrol."
+      },
+      {
+        "Name": "ShowIcon",
+        "Description": "Determines whether the calendar icon is displayed next to the\nselected date."
+      },
+      {
+        "Name": "Icon",
+        "Description": "Sets the image displayed beside the selected date."
+      },
+      {
+        "Name": "IconTint",
+        "Description": "Tints the displayed calendar icon."
+      },
+      {
+        "Name": "Rounding",
+        "Description": "Controls the corner radius of the control."
+      }
+    ],
+    "Methods": [
+      {
+        "Name": "ShowDialog()",
+        "Description": "Opens the date picker dialog programmatically."
+      }
+    ],
+    "Events": [
+      {
+        "Name": "DateChanged",
+        "Description": "Occurs whenever the selected date changes."
+      }
+    ]
+  },
+  {
+    "FileName": "cuiChartLine.html",
+    "RelativePath": "controls/cuiChartLine.html",
+    "Kind": "Controls",
+    "Header": "cuiChartLine",
+    "Summary": "Displays a customizable single-line chart with optional Bézier curve\nsmoothing, gradient fill, and point value tooltips.",
+    "Properties": [
+      {
+        "Name": "DataPoints",
+        "Description": "The values displayed on the chart. At least two data points are\nrecommended for proper rendering."
+      },
+      {
+        "Name": "CustomXAxis",
+        "Description": "Replaces the default weekday labels with custom X-axis labels.\nLeave empty to use the built-in weekday labels."
+      },
+      {
+        "Name": "AutoMaxValue",
+        "Description": "Automatically sets MaxValue to the largest value in\nDataPoints. Enabled by default."
+      },
+      {
+        "Name": "MaxValue",
+        "Description": "Sets the maximum value displayed on the Y-axis. Assigning this\nproperty automatically disables AutoMaxValue."
+      },
+      {
+        "Name": "UsePercent",
+        "Description": "Controls whether Y-axis labels and point tooltips display values\nas percentages or absolute numbers."
+      },
+      {
+        "Name": "ShortDates",
+        "Description": "Uses abbreviated weekday names (Mon,\nTue, ...) instead of full names when the default\nX-axis labels are used."
+      },
+      {
+        "Name": "UseBezier",
+        "Description": "Draws smooth Bézier curves instead of straight line segments."
+      },
+      {
+        "Name": "GradientBackground",
+        "Description": "Draws a gradient fill beneath the chart line. When disabled, a\nsolid translucent fill is used instead."
+      },
+      {
+        "Name": "ShowLines",
+        "Description": "Controls whether horizontal guide lines are displayed."
+      },
+      {
+        "Name": "ChartPadding",
+        "Description": "Specifies the padding around the chart drawing area."
+      }
+    ],
+    "Methods": [],
+    "Events": []
+  },
+  {
+    "FileName": "cuiCheckbox.html",
+    "RelativePath": "controls/cuiCheckbox.html",
+    "Kind": "Controls",
+    "Header": "cuiCheckbox",
+    "Summary": "A customizable checkbox control with rounded corners, configurable colors,\nand optional checkmark and cross symbols.",
+    "Properties": [
+      {
+        "Name": "Checked",
+        "Description": "Gets or sets whether the checkbox is checked."
+      },
+      {
+        "Name": "Content",
+        "Description": "The text displayed next to the checkbox.\nText is provided as an alias for this property."
+      },
+      {
+        "Name": "ShowSymbols",
+        "Description": "Determines whether the checkbox displays a checkmark when checked\nand a cross when unchecked."
+      },
+      {
+        "Name": "Rounding",
+        "Description": "Controls the corner radius of the checkbox."
+      },
+      {
+        "Name": "OutlineThickness",
+        "Description": "Controls the thickness of the checkbox outline."
+      }
+    ],
+    "Methods": [],
+    "Events": [
+      {
+        "Name": "CheckedChanged",
+        "Description": "Occurs whenever the Checked property changes."
+      }
+    ]
+  },
+  {
+    "FileName": "cuiColorPickerWheel.html",
+    "RelativePath": "controls/cuiColorPickerWheel.html",
+    "Kind": "Controls",
+    "Header": "cuiColorPickerWheel",
+    "Summary": "An HSV color picker consisting of an outer hue ring and an inner\nsaturation/value triangle.",
+    "Properties": [
+      {
+        "Name": "Content",
+        "Description": "Gets or sets the currently selected color."
+      },
+      {
+        "Name": "WheelThickness",
+        "Description": "Controls the thickness of the hue ring. Increasing this value\nreduces the size of the saturation/value triangle."
+      }
+    ],
+    "Methods": [],
+    "Events": [
+      {
+        "Name": "ContentChanged",
+        "Description": "Occurs whenever the selected color changes, either by user\ninteraction or by assigning Content from code."
+      },
+      {
+        "Name": "SelectedColor",
+        "Description": "Occurs after the user finishes selecting a color by releasing\nthe left mouse button."
+      }
+    ]
+  },
+  {
+    "FileName": "cuiComboBox.html",
+    "RelativePath": "controls/cuiComboBox.html",
+    "Kind": "Controls",
+    "Header": "cuiComboBox",
+    "Summary": "A modern combo box that displays its items in a separate rounded popup with\na custom scrollbar when necessary.",
+    "Properties": [
+      {
+        "Name": "Items",
+        "Description": "The collection of items displayed in the drop-down list."
+      },
+      {
+        "Name": "SelectedIndex",
+        "Description": "Gets or sets the index of the currently selected item.\nA value of -1 indicates that no item is selected."
+      },
+      {
+        "Name": "SelectedItem",
+        "Description": "Gets or sets the currently selected item by its text.\nAssigning an empty string clears the selection."
+      },
+      {
+        "Name": "NoSelectionText",
+        "Description": "The placeholder text displayed when\nSelectedIndex is -1."
+      },
+      {
+        "Name": "SortAlphabetically",
+        "Description": "Automatically sorts the items alphabetically before opening the\ndrop-down."
+      },
+      {
+        "Name": "MaxDropDownHeight",
+        "Description": "Specifies the maximum height of the drop-down before scrolling is\nenabled."
+      }
+    ],
+    "Methods": [
+      {
+        "Name": "AddItem(string)",
+        "Description": "Adds a new item to the combo box."
+      },
+      {
+        "Name": "RemoveItem(string)",
+        "Description": "Removes the first matching item from the combo box."
+      }
+    ],
+    "Events": [
+      {
+        "Name": "SelectedIndexChanged",
+        "Description": "Occurs whenever the selected item changes."
+      }
+    ]
+  },
+  {
+    "FileName": "cuiEllipse.html",
+    "RelativePath": "controls/cuiEllipse.html",
+    "Kind": "Controls",
+    "Header": "cuiEllipse",
+    "Summary": "Displays a simple ellipse with customizable fill color and optional outline.",
+    "Properties": [
+      {
+        "Name": "PanelColor",
+        "Description": "Specifies the fill color of the ellipse."
+      },
+      {
+        "Name": "OutlineColor",
+        "Description": "Specifies the color of the ellipse outline."
+      },
+      {
+        "Name": "OutlineThickness",
+        "Description": "Controls the thickness of the outline in pixels."
+      }
+    ],
+    "Methods": [],
+    "Events": []
+  },
+  {
+    "FileName": "cuiFileDropper.html",
+    "RelativePath": "controls/cuiFileDropper.html",
+    "Kind": "Controls",
+    "Header": "cuiFileDropper",
+    "Summary": "Accepts files by drag and drop or, optionally, by opening an\nOpenFileDialog when clicked.",
+    "Properties": [
+      {
+        "Name": "UploadWithClick",
+        "Description": "Determines whether clicking the control opens an\nOpenFileDialog."
+      },
+      {
+        "Name": "Multiselect",
+        "Description": "Allows the user to select or drop multiple files at once."
+      },
+      {
+        "Name": "Filter",
+        "Description": "Specifies the allowed file types. The same filter is applied to\nboth drag-and-drop and the file dialog."
+      },
+      {
+        "Name": "FileName",
+        "Description": "Gets the first selected or dropped file."
+      },
+      {
+        "Name": "FileNames",
+        "Description": "Gets all selected or dropped files."
+      }
+    ],
+    "Methods": [
+      {
+        "Name": "GetExtensionsFromFilter()",
+        "Description": "Returns the list of file extensions parsed from the\nFilter property."
+      }
+    ],
+    "Events": [
+      {
+        "Name": "FileDropped",
+        "Description": "Occurs after one or more valid files have been selected or\ndropped onto the control."
+      }
+    ]
+  },
+  {
+    "FileName": "cuiFolderDropper.html",
+    "RelativePath": "controls/cuiFolderDropper.html",
+    "Kind": "Controls",
+    "Header": "cuiFolderDropper",
+    "Summary": "Accepts folders by drag and drop or, optionally, by opening a modern\nOpenFolderDialog when clicked.",
+    "Properties": [
+      {
+        "Name": "UploadWithClick",
+        "Description": "Determines whether clicking the control opens an\nOpenFolderDialog."
+      },
+      {
+        "Name": "Multiselect",
+        "Description": "Allows the user to select or drop multiple folders at once."
+      },
+      {
+        "Name": "FolderName",
+        "Description": "Gets the first selected or dropped folder."
+      },
+      {
+        "Name": "FolderNames",
+        "Description": "Gets all selected or dropped folders."
+      }
+    ],
+    "Methods": [],
+    "Events": [
+      {
+        "Name": "FolderDropped",
+        "Description": "Occurs after one or more valid folders have been selected or\ndropped onto the control."
+      }
+    ]
+  },
+  {
+    "FileName": "cuiGroupBox.html",
+    "RelativePath": "controls/cuiGroupBox.html",
+    "Kind": "Controls",
+    "Header": "cuiGroupBox",
+    "Summary": "A lightweight container with a rounded border and an optional title displayed\nin its top-left corner.",
+    "Properties": [
+      {
+        "Name": "Content",
+        "Description": "Sets the title displayed at the top of the group box."
+      },
+      {
+        "Name": "Text",
+        "Description": "An alias for Content, provided for compatibility with standard WinForms controls."
+      },
+      {
+        "Name": "Rounding",
+        "Description": "Controls the corner radius of the border."
+      }
+    ],
+    "Methods": [],
+    "Events": []
+  },
+  {
+    "FileName": "cuiHexagon.html",
+    "RelativePath": "controls/cuiHexagon.html",
+    "Kind": "Controls",
+    "Header": "cuiHexagon",
+    "Summary": "Displays a customizable hexagon with configurable corner rounding, fill\ncolor, and optional outline.",
+    "Properties": [
+      {
+        "Name": "PanelColor",
+        "Description": "Specifies the fill color of the hexagon."
+      },
+      {
+        "Name": "OutlineColor",
+        "Description": "Specifies the color of the hexagon outline."
+      },
+      {
+        "Name": "OutlineThickness",
+        "Description": "Controls the thickness of the outline in pixels."
+      },
+      {
+        "Name": "Rounding",
+        "Description": "Controls how rounded the six corners of the hexagon appear.\nHigher values produce smoother corners."
+      }
+    ],
+    "Methods": [],
+    "Events": []
+  },
+  {
+    "FileName": "cuiLabel.html",
+    "RelativePath": "controls/cuiLabel.html",
+    "Kind": "Controls",
+    "Header": "cuiLabel",
+    "Summary": "A label that supports both horizontal and vertical text alignment, along\nwith escaped newline and tab characters in its content.",
+    "Properties": [
+      {
+        "Name": "Content",
+        "Description": "The text displayed by the control. Escaped sequences such as\n\\n, \\r\\n, and \\t are\nautomatically converted into newlines and tabs."
+      },
+      {
+        "Name": "HorizontalAlignment",
+        "Description": "Controls the horizontal alignment of the text."
+      },
+      {
+        "Name": "VerticalAlignment",
+        "Description": "Controls the vertical alignment of the text."
+      },
+      {
+        "Name": "WordWrap",
+        "Description": "Enables wrapping text onto multiple lines. When disabled, the text is\nrendered on a single line."
+      },
+      {
+        "Name": "AutoEllipsis",
+        "Description": "Displays an ellipsis (...) when the text does not fit\nwithin the control and AutoSize is disabled."
+      },
+      {
+        "Name": "AutoSize",
+        "Description": "Automatically resizes the control to fit its content, taking the\ncurrent font, padding, and WordWrap setting into account."
+      },
+      {
+        "Name": "Trimming",
+        "Description": "Specifies how clipped text is trimmed when\nAutoEllipsis is disabled."
+      }
+    ],
+    "Methods": [],
+    "Events": []
+  },
+  {
+    "FileName": "cuiListbox.html",
+    "RelativePath": "controls/cuiListbox.html",
+    "Kind": "Controls",
+    "Header": "cuiListbox",
+    "Summary": "A list box with rounded corners, customizable item\nappearance, and hover highlighting.",
+    "Properties": [
+      {
+        "Name": "Rounding",
+        "Description": "Controls the rounding of the list box itself."
+      },
+      {
+        "Name": "ItemRounding",
+        "Description": "Controls the rounding applied to individual items."
+      },
+      {
+        "Name": "HoveredIndex",
+        "Description": "Gets the index of the item currently under the mouse pointer, or -1 if none."
+      }
+    ],
+    "Methods": [],
+    "Events": []
+  },
+  {
+    "FileName": "cuiOTPasswordBox.html",
+    "RelativePath": "controls/cuiOTPasswordBox.html",
+    "Kind": "Controls",
+    "Header": "cuiOTPasswordBox",
+    "Summary": "A one-time password input control that displays each character in its own\nbox and automatically tracks when all boxes have been filled.",
+    "Properties": [
+      {
+        "Name": "BoxAmount",
+        "Description": "Determines the number of character boxes displayed."
+      },
+      {
+        "Name": "Content",
+        "Description": "Gets or sets the entered text. Text is an alias for\nthis property."
+      },
+      {
+        "Name": "OnlyDigit",
+        "Description": "Intended to restrict input to digits only."
+      },
+      {
+        "Name": "UnderlinedStyle",
+        "Description": "Draws only the bottom border of each box instead of a full\noutline."
+      }
+    ],
+    "Methods": [
+      {
+        "Name": "ResetText()",
+        "Description": "Clears the current input."
+      }
+    ],
+    "Events": [
+      {
+        "Name": "FinishedTypingContent",
+        "Description": "Occurs when the number of entered characters reaches\nBoxAmount."
+      },
+      {
+        "Name": "NotFinishedTypingContent",
+        "Description": "Occurs when the content becomes shorter than\nBoxAmount, such as after deleting a character."
+      }
+    ]
+  },
+  {
+    "FileName": "cuiPanel.html",
+    "RelativePath": "controls/cuiPanel.html",
+    "Kind": "Controls",
+    "Header": "cuiPanel",
+    "Summary": "A panel with customizable rounded corners, background, and border.",
+    "Properties": [
+      {
+        "Name": "Rounding",
+        "Description": "Controls the corner radius of the panel. Each corner can be\nrounded independently."
+      }
+    ],
+    "Methods": [],
+    "Events": []
+  },
+  {
+    "FileName": "cuiPanelGradient.html",
+    "RelativePath": "controls/cuiPanelGradient.html",
+    "Kind": "Controls",
+    "Header": "cuiPanelGradient",
+    "Summary": "A panel with independently customizable gradient background and border,\nincluding configurable gradient direction and rounded corners.",
+    "Properties": [
+      {
+        "Name": "GradientAngle",
+        "Description": "Controls the direction of both the background and border gradients."
+      },
+      {
+        "Name": "OutlineThickness",
+        "Description": "Sets the thickness of the gradient border."
+      },
+      {
+        "Name": "Rounding",
+        "Description": "Controls the corner radius of the panel."
+      }
+    ],
+    "Methods": [],
+    "Events": []
+  },
+  {
+    "FileName": "cuiPictureBox.html",
+    "RelativePath": "controls/cuiPictureBox.html",
+    "Kind": "Controls",
+    "Header": "cuiPictureBox",
+    "Summary": "Displays an image with optional tinting, rotation, rounded corners, and an\noptional outline.",
+    "Properties": [
+      {
+        "Name": "Content",
+        "Description": "The image displayed by the control."
+      },
+      {
+        "Name": "ImageTint",
+        "Description": "Applies a color tint to the displayed image."
+      },
+      {
+        "Name": "Rotation",
+        "Description": "Rotates the image in degrees."
+      },
+      {
+        "Name": "Rounding",
+        "Description": "Controls the corner radius of the control."
+      }
+    ],
+    "Methods": [],
+    "Events": []
+  },
+  {
+    "FileName": "cuiProgressBarCircle.html",
+    "RelativePath": "controls/cuiProgressBarCircle.html",
+    "Kind": "Controls",
+    "Header": "cuiCircleProgressBar",
+    "Summary": "Displays progress as a circular indicator with configurable thickness and\noptional rounded ends.",
+    "Properties": [
+      {
+        "Name": "ProgressValue",
+        "Description": "Specifies the current progress value."
+      },
+      {
+        "Name": "MinimumValue",
+        "Description": "Specifies the minimum progress value."
+      },
+      {
+        "Name": "MaximumValue",
+        "Description": "Specifies the maximum progress value."
+      },
+      {
+        "Name": "BorderWidth",
+        "Description": "Controls the thickness of the circular progress bar."
+      },
+      {
+        "Name": "RoundedEnds",
+        "Description": "Determines whether the progress arc uses rounded line caps."
+      }
+    ],
+    "Methods": [],
+    "Events": []
+  },
+  {
+    "FileName": "cuiProgressBarHorizontal.html",
+    "RelativePath": "controls/cuiProgressBarHorizontal.html",
+    "Kind": "Controls",
+    "Header": "cuiProgressBarHorizontal",
+    "Summary": "Displays progress as a horizontal bar with configurable direction and\nrounded corners.",
+    "Properties": [
+      {
+        "Name": "Value",
+        "Description": "Gets or sets the current progress value."
+      },
+      {
+        "Name": "MaxValue",
+        "Description": "Specifies the maximum progress value."
+      },
+      {
+        "Name": "Flipped",
+        "Description": "Reverses the fill direction so the progress bar fills from right\nto left."
+      },
+      {
+        "Name": "Rounding",
+        "Description": "Controls the corner radius. The value is automatically limited\nto half of the control's height."
+      }
+    ],
+    "Methods": [],
+    "Events": []
+  },
+  {
+    "FileName": "cuiProgressBarVertical.html",
+    "RelativePath": "controls/cuiProgressBarVertical.html",
+    "Kind": "Controls",
+    "Header": "cuiProgressBarVertical",
+    "Summary": "Displays progress as a vertical bar with configurable direction and\nrounded corners.",
+    "Properties": [
+      {
+        "Name": "Value",
+        "Description": "Gets or sets the current progress value."
+      },
+      {
+        "Name": "MaxValue",
+        "Description": "Specifies the maximum progress value."
+      },
+      {
+        "Name": "Flipped",
+        "Description": "Reverses the fill direction so the progress bar fills from top\nto bottom instead of bottom to top."
+      },
+      {
+        "Name": "Rounding",
+        "Description": "Controls the corner radius. The value is automatically limited\nto half of the control's height."
+      }
+    ],
+    "Methods": [],
+    "Events": []
+  },
+  {
+    "FileName": "cuiProgressTrackerHorizontal.html",
+    "RelativePath": "controls/cuiProgressTrackerHorizontal.html",
+    "Kind": "Controls",
+    "Header": "cuiProgressTrackerHorizontal",
+    "Summary": "Displays progress through a sequence of tasks using connected indicators.\nCompleted, current, and remaining tasks are shown with different visual\nstates.",
+    "Properties": [
+      {
+        "Name": "Tasks",
+        "Description": "The list of task names displayed by the control."
+      },
+      {
+        "Name": "TasksProgress",
+        "Description": "Specifies how many tasks have been completed."
+      },
+      {
+        "Name": "CurrentTask",
+        "Description": "Read-only. Returns the name of the current task."
+      },
+      {
+        "Name": "ShowSymbols",
+        "Description": "Determines whether completed tasks display a checkmark."
+      },
+      {
+        "Name": "AutoRounding",
+        "Description": "Automatically rounds each task indicator into a circle.\nDisable this to use the Rounding property."
+      }
+    ],
+    "Methods": [],
+    "Events": []
+  },
+  {
+    "FileName": "cuiProgressTrackerVertical.html",
+    "RelativePath": "controls/cuiProgressTrackerVertical.html",
+    "Kind": "Controls",
+    "Header": "cuiProgressTrackerVertical",
+    "Summary": "Displays progress through a sequence of tasks using a vertical step tracker.\nCompleted tasks, the current task, and remaining tasks are visually distinguished.",
+    "Properties": [
+      {
+        "Name": "Tasks",
+        "Description": "Specifies the list of task names displayed by the control."
+      },
+      {
+        "Name": "TasksProgress",
+        "Description": "Determines how many tasks have been completed."
+      },
+      {
+        "Name": "CurrentTask",
+        "Description": "Read-only. Returns the name of the current task."
+      },
+      {
+        "Name": "ShowSymbols",
+        "Description": "Determines whether completed tasks display a checkmark."
+      },
+      {
+        "Name": "LineThickness",
+        "Description": "Controls the thickness of the connecting lines."
+      },
+      {
+        "Name": "AutoRounding",
+        "Description": "Automatically rounds task indicators into circles. Disable this to use the Rounding property."
+      },
+      {
+        "Name": "Rounding",
+        "Description": "Controls the corner radius of the task indicators when AutoRounding is disabled."
+      }
+    ],
+    "Methods": [],
+    "Events": []
+  },
+  {
+    "FileName": "cuiResizeGrip.html",
+    "RelativePath": "controls/cuiResizeGrip.html",
+    "Kind": "Controls",
+    "Header": "cuiResizeGrip",
+    "Summary": "Restores bottom-right resizing for borderless forms by providing a draggable\nresize grip.",
+    "Properties": [
+      {
+        "Name": "TargetForm",
+        "Description": "The borderless form that will be resized when the grip is\ndragged."
+      },
+      {
+        "Name": "GripTexture",
+        "Description": "Determines whether the resize grip texture is drawn."
+      },
+      {
+        "Name": "GripSize",
+        "Description": "Controls the size of each square in the grip texture."
+      },
+      {
+        "Name": "SkipBottomRightSquare",
+        "Description": "Omits the bottom-right square from the grip texture."
+      }
+    ],
+    "Methods": [],
+    "Events": []
+  },
+  {
+    "FileName": "cuiSeparator.html",
+    "RelativePath": "controls/cuiSeparator.html",
+    "Kind": "Controls",
+    "Header": "cuiSeparator",
+    "Summary": "A simple divider for visually separating content. It can be displayed\nhorizontally or vertically.",
+    "Properties": [
+      {
+        "Name": "Vertical",
+        "Description": "Determines whether the separator is drawn vertically instead of\nhorizontally."
+      },
+      {
+        "Name": "SeparatorMargin",
+        "Description": "Sets the empty space at both ends of the separator line."
+      },
+      {
+        "Name": "Thickness",
+        "Description": "Controls the thickness of the separator line."
+      }
+    ],
+    "Methods": [],
+    "Events": []
+  },
+  {
+    "FileName": "cuiSlider.html",
+    "RelativePath": "controls/cuiSlider.html",
+    "Kind": "Controls",
+    "Header": "cuiSlider",
+    "Summary": "A customizable horizontal slider for selecting a value within a specified\nrange.",
+    "Properties": [
+      {
+        "Name": "Value",
+        "Description": "Gets or sets the slider's current value. Changing it raises the\nValueChanged event."
+      },
+      {
+        "Name": "MinValue",
+        "Description": "Specifies the minimum selectable value."
+      },
+      {
+        "Name": "MaxValue",
+        "Description": "Specifies the maximum selectable value."
+      },
+      {
+        "Name": "ThumbOutlineThickness",
+        "Description": "Controls the thickness of the thumb's outline."
+      }
+    ],
+    "Methods": [
+      {
+        "Name": "GetProgressPercentage()",
+        "Description": "Returns the current slider position as a value between\n0 and 1."
+      }
+    ],
+    "Events": [
+      {
+        "Name": "ValueChanged",
+        "Description": "Occurs whenever the Value changes."
+      }
+    ]
+  },
+  {
+    "FileName": "cuiSliderVertical.html",
+    "RelativePath": "controls/cuiSliderVertical.html",
+    "Kind": "Controls",
+    "Header": "cuiSliderVertical",
+    "Summary": "A customizable vertical slider for selecting a value within a specified\nrange by dragging the thumb.",
+    "Properties": [
+      {
+        "Name": "Value",
+        "Description": "Gets or sets the current slider value."
+      },
+      {
+        "Name": "MinValue",
+        "Description": "Specifies the minimum value the slider can represent."
+      },
+      {
+        "Name": "MaxValue",
+        "Description": "Specifies the maximum value the slider can represent."
+      },
+      {
+        "Name": "UpsideDown",
+        "Description": "Reverses the slider direction so higher values appear at the top instead of the bottom."
+      },
+      {
+        "Name": "ThumbOutlineThickness",
+        "Description": "Controls the thickness of the outline drawn around the slider thumb."
+      }
+    ],
+    "Methods": [
+      {
+        "Name": "GetProgressPercentage()",
+        "Description": "Returns the current slider position as a value between 0 and 1."
+      }
+    ],
+    "Events": [
+      {
+        "Name": "ValueChanged",
+        "Description": "Occurs whenever the Value property changes."
+      }
+    ]
+  },
+  {
+    "FileName": "cuiSpinner.html",
+    "RelativePath": "controls/cuiSpinner.html",
+    "Kind": "Controls",
+    "Header": "cuiSpinner",
+    "Summary": "Displays an animated loading spinner consisting of a background ring and a\nrotating arc.",
+    "Properties": [
+      {
+        "Name": "RotateEnabled",
+        "Description": "Starts or stops the spinner animation."
+      },
+      {
+        "Name": "RotateSpeed",
+        "Description": "Controls how quickly the spinner rotates."
+      },
+      {
+        "Name": "Rotation",
+        "Description": "Gets or sets the current rotation angle. This can be used to\nmanually control the spinner when RotateEnabled is\ndisabled."
+      },
+      {
+        "Name": "Thickness",
+        "Description": "Controls the thickness of both the background ring and the\nrotating arc."
+      }
+    ],
+    "Methods": [],
+    "Events": []
+  },
+  {
+    "FileName": "cuiStarRating.html",
+    "RelativePath": "controls/cuiStarRating.html",
+    "Kind": "Controls",
+    "Header": "cuiStarRating",
+    "Summary": "Displays a row of stars for selecting or displaying a rating. Supports\nhalf-star increments and can optionally be made read-only.",
+    "Properties": [
+      {
+        "Name": "StarCount",
+        "Description": "Controls how many stars are displayed."
+      },
+      {
+        "Name": "Rating",
+        "Description": "Gets or sets the current rating. The maximum value is\nStarCount × 2, allowing half-star increments."
+      },
+      {
+        "Name": "Rounding",
+        "Description": "Controls how rounded the star points are. Higher values make the stars more rounded, while lower values less rounded. Rounding = 0 makes the corners sharp."
+      },
+      {
+        "Name": "AllowUserInteraction",
+        "Description": "Determines whether the user can change the rating with the mouse."
+      }
+    ],
+    "Methods": [],
+    "Events": [
+      {
+        "Name": "RatingChanged",
+        "Description": "Occurs whenever the Rating property changes."
+      }
+    ]
+  },
+  {
+    "FileName": "cuiSwitch.html",
+    "RelativePath": "controls/cuiSwitch.html",
+    "Kind": "Controls",
+    "Header": "cuiSwitch",
+    "Summary": "An animated toggle switch that provides a modern alternative to a traditional\ncheckbox.",
+    "Properties": [
+      {
+        "Name": "Checked",
+        "Description": "Gets or sets whether the switch is in the checked state."
+      },
+      {
+        "Name": "OutlineThickness",
+        "Description": "Controls the thickness of the switch's outline."
+      },
+      {
+        "Name": "ThumbSizeModifier",
+        "Description": "Adjusts the size of the thumb without changing the overall control size."
+      }
+    ],
+    "Methods": [],
+    "Events": [
+      {
+        "Name": "CheckedChanged",
+        "Description": "Occurs whenever the Checked property changes."
+      }
+    ]
+  },
+  {
+    "FileName": "cuiTabControl.html",
+    "RelativePath": "controls/cuiTabControl.html",
+    "Kind": "Controls",
+    "Header": "cuiTabControl",
+    "Summary": "A custom tab control whose pages are created programmatically instead of\nthrough the designer. Each tab hosts a Control, such as a\nUserControl, and can optionally display an image.",
+    "Properties": [
+      {
+        "Name": "SelectedIndex",
+        "Description": "Gets or changes the currently selected tab by index."
+      },
+      {
+        "Name": "SelectedTab",
+        "Description": "Gets or changes the currently selected TabPage."
+      },
+      {
+        "Name": "Pages",
+        "Description": "Provides a read-only collection of all tabs."
+      },
+      {
+        "Name": "Count",
+        "Description": "Gets the number of tabs currently in the control."
+      },
+      {
+        "Name": "ShowPlus",
+        "Description": "Determines whether the built-in add tab button is displayed."
+      },
+      {
+        "Name": "ShowDelete",
+        "Description": "Determines whether close buttons are shown on tab headers."
+      },
+      {
+        "Name": "NamingConvention",
+        "Description": "Specifies the base name used when automatically creating new tabs."
+      },
+      {
+        "Name": "ScrollOffset",
+        "Description": "Gets or sets the current horizontal scroll position of the tab strip."
+      }
+    ],
+    "Methods": [
+      {
+        "Name": "AddTab()",
+        "Description": "Creates a new empty tab using the current NamingConvention."
+      },
+      {
+        "Name": "AddTab(string)",
+        "Description": "Creates a new empty tab with the specified title."
+      },
+      {
+        "Name": "AddTab(string, Control)",
+        "Description": "Creates a tab and automatically docks the supplied control to fill its contents."
+      },
+      {
+        "Name": "AddTab(string, Bitmap, Control)",
+        "Description": "Creates a tab with an image and automatically docks the supplied control."
+      },
+      {
+        "Name": "SelectTab(int)",
+        "Description": "Selects a tab by its index."
+      },
+      {
+        "Name": "SelectTab(TabPage)",
+        "Description": "Selects the specified tab."
+      },
+      {
+        "Name": "RemoveTab(int)",
+        "Description": "Removes the tab at the specified index."
+      },
+      {
+        "Name": "RemoveTab(TabPage)",
+        "Description": "Removes the specified tab."
+      },
+      {
+        "Name": "RemoveSelectedTab()",
+        "Description": "Removes the currently selected tab."
+      },
+      {
+        "Name": "ClearTabs()",
+        "Description": "Removes every tab from the control."
+      },
+      {
+        "Name": "Contains(TabPage)",
+        "Description": "Returns whether the specified tab belongs to this control."
+      },
+      {
+        "Name": "IndexOf(TabPage)",
+        "Description": "Returns the index of the specified tab."
+      },
+      {
+        "Name": "GetUniqueTabName()",
+        "Description": "Generates the next available tab name using NamingConvention."
+      }
+    ],
+    "Events": [
+      {
+        "Name": "TabAdded",
+        "Description": "Occurs after a new tab has been created."
+      },
+      {
+        "Name": "TabRemoved",
+        "Description": "Occurs after a tab has been removed."
+      },
+      {
+        "Name": "SelectedTabChanged",
+        "Description": "Occurs when the selected tab changes."
+      }
+    ]
+  },
+  {
+    "FileName": "cuiTextBox.html",
+    "RelativePath": "controls/cuiTextBox.html",
+    "Kind": "Controls",
+    "Header": "cuiTextBox",
+    "Summary": "A customizable text box supporting rounded corners, placeholder text,\noptional images, multiline input, and focus-specific appearance.",
+    "Properties": [
+      {
+        "Name": "Content",
+        "Description": "Gets or sets the current text. This property is equivalent to Text."
+      },
+      {
+        "Name": "PlaceholderText",
+        "Description": "Text displayed when the control is empty and does not have focus."
+      },
+      {
+        "Name": "Multiline",
+        "Description": "Determines whether the control accepts multiple lines of text."
+      },
+      {
+        "Name": "PasswordChar",
+        "Description": "Displays password characters instead of the entered text."
+      },
+      {
+        "Name": "UnderlinedStyle",
+        "Description": "Draws only the bottom border instead of a complete outline."
+      },
+      {
+        "Name": "Image",
+        "Description": "Displays an optional image inside the text box. Its position, size, and tint can be customized."
+      },
+      {
+        "Name": "Rounding",
+        "Description": "Controls the corner radius of the text box."
+      }
+    ],
+    "Methods": [
+      {
+        "Name": "ResetText()",
+        "Description": "Clears the current text and restores the placeholder if applicable."
+      }
+    ],
+    "Events": [
+      {
+        "Name": "ContentChanged",
+        "Description": "Occurs whenever the text entered by the user changes."
+      }
+    ]
+  },
+  {
+    "FileName": "cuiTextBoxCreditCardNumber.html",
+    "RelativePath": "controls/cuiTextBoxCreditCardNumber.html",
+    "Kind": "Controls",
+    "Header": "cuiTextBoxCreditCardNumber",
+    "Summary": "A specialized text box that automatically formats credit card numbers,\ndetects the card provider, and displays the corresponding card logo.",
+    "Properties": [
+      {
+        "Name": "Content",
+        "Description": "Gets or sets the current credit card number. This property is equivalent to Text."
+      },
+      {
+        "Name": "PlaceholderText",
+        "Description": "Text displayed when the control is empty and does not have focus."
+      },
+      {
+        "Name": "Company",
+        "Description": "Gets the detected card provider."
+      },
+      {
+        "Name": "IsCardValid",
+        "Description": "Indicates whether the entered number is long enough to identify a supported card provider."
+      },
+      {
+        "Name": "PasswordChar",
+        "Description": "Displays password characters instead of the entered text."
+      },
+      {
+        "Name": "UnderlinedStyle",
+        "Description": "Draws only the bottom border instead of a complete outline."
+      },
+      {
+        "Name": "Rounding",
+        "Description": "Controls the corner radius of the text box."
+      }
+    ],
+    "Methods": [
+      {
+        "Name": "ResetText()",
+        "Description": "Clears the current text and restores the placeholder if applicable."
+      },
+      {
+        "Name": "DetectCardType(string)",
+        "Description": "Detects the card provider from the specified card number."
+      }
+    ],
+    "Events": [
+      {
+        "Name": "ContentChanged",
+        "Description": "Occurs whenever the entered card number changes."
+      },
+      {
+        "Name": "IsCardValidChanged",
+        "Description": "Occurs when the value of IsCardValid changes."
+      }
+    ]
+  },
+  {
+    "FileName": "Introduction.html",
+    "RelativePath": "Introduction.html",
+    "Kind": "Docs",
+    "Header": "Introduction",
+    "Summary": "Welcome to the HartUI documentation.\n\nHartUI is a fork of the original\nCuoreUI library.\nThis project continues its development,\nfixes bugs, adds new controls and components, and keeps the library up to\ndate.",
+    "Properties": [],
+    "Methods": [],
+    "Events": []
+  },
+  {
+    "FileName": "OpenFolderDialog.html",
+    "RelativePath": "miscellaneous/OpenFolderDialog.html",
+    "Kind": "Miscellaneous",
+    "Header": "OpenFolderDialog",
+    "Summary": "A modern replacement for FolderBrowserDialog that uses the\nWindows File Open dialog in folder selection mode. It supports modern UI,\nmulti-selection, and several customization options.",
+    "Properties": [
+      {
+        "Name": "Multiselect",
+        "Description": "Allows the user to select multiple folders."
+      },
+      {
+        "Name": "FolderName",
+        "Description": "Gets the first selected folder."
+      },
+      {
+        "Name": "FolderNames",
+        "Description": "Gets all selected folders."
+      },
+      {
+        "Name": "InputPath",
+        "Description": "Specifies the initial folder displayed when the dialog opens."
+      },
+      {
+        "Name": "Title",
+        "Description": "Sets the dialog window title."
+      },
+      {
+        "Name": "OkButtonLabel",
+        "Description": "Changes the text displayed on the confirmation button."
+      },
+      {
+        "Name": "FileNameLabel",
+        "Description": "Changes the label displayed next to the folder name field."
+      }
+    ],
+    "Methods": [
+      {
+        "Name": "ShowDialog()",
+        "Description": "Displays the dialog using the application's main window as its owner."
+      },
+      {
+        "Name": "ShowDialog(IntPtr)",
+        "Description": "Displays the dialog using the specified window handle as its owner."
+      }
+    ],
+    "Events": []
+  },
+  {
+    "FileName": "Overview.html",
+    "RelativePath": "Overview.html",
+    "Kind": "Docs",
+    "Header": "Overview",
+    "Summary": "Here's the list of controls and components, and their intended purposes!",
+    "Properties": [],
+    "Methods": [],
+    "Events": []
+  }
+]
