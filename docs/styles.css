@@ -299,6 +299,7 @@ input:focus {
 
 .search-results-container {
   z-index: 1;
+  display:none;
   opacity: 0;
   pointer-events: none;
   width: calc(294px + 16px);
@@ -311,16 +312,26 @@ input:focus {
   border: 1px solid rgb(36, 36, 36);
   border-radius: 18px;
   transition: all 0.3s cubic-bezier(0.215, 0.610, 0.355, 1);
-  display: flex;
   justify-content: center;
   flex-direction: column;
   gap: 3px;
   box-shadow: 0 0 64px 24px black;
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .search-container:has(> input:focus) .search-results-container {
+  display: flex;
   opacity: 1;
   pointer-events: all;
+  animation: fadeIn 0.75s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 .no-results {
@@ -337,7 +348,6 @@ input:focus {
 
 .search-results-container>button {
   width: calc(100% + 16px);
-  pointer-events: all;
   background-color: rgb(17, 17, 17);
   border-radius: 12px;
   text-decoration: none;
