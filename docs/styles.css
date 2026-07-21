@@ -217,6 +217,7 @@ iframe {
   align-items: center;
   overflow: visible;
   margin-left: -24px;
+  pointer-events: none;
 }
 
 .search-container>input {
@@ -231,6 +232,7 @@ iframe {
   border: 2px solid rgb(36, 36, 36);
   border-radius: 14px;
   transition: all 0.15s cubic-bezier(0.215, 0.610, 0.355, 1);
+  pointer-events: all;
 }
 
 .search-container:has(> input)::before {
