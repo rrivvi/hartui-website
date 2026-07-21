@@ -1,3 +1,5 @@
+let classesList = [];
+
 function fetch_and_process_list() {
   fetch("list")
     .then((response) => {
@@ -22,7 +24,7 @@ function processSections(sectionsArray) {
   createIntroduction(trimEntry(sectionsArray[0]));
   createComponents(trimEntry(sectionsArray[1]));
   createControls(trimEntry(sectionsArray[2]));
-  createMiscallenous(trimEntry(sectionsArray[3]));
+  createMiscellaneous(trimEntry(sectionsArray[3]));
 
   const url = new URL(location);
   const pageName = url.searchParams.get("p") || introductionSection.firstChild.textContent;
@@ -39,23 +41,35 @@ function processSections(sectionsArray) {
 let componentsSection = document.getElementById("l1");
 let controlsSection = document.getElementById("l2");
 let introductionSection = document.getElementById("l3");
-let miscallenousSection = document.getElementById("l4");
+let miscellaneousSection = document.getElementById("l4");
 let main = document.getElementById("m").children[0];
 
 function createComponents(listToParse) {
   addToSection(listToParse, componentsSection);
+  listToParse.forEach(element => {
+    classesList.push(`components/${element}`);
+  });
 }
 
 function createControls(listToParse) {
   addToSection(listToParse, controlsSection);
+  listToParse.forEach(element => {
+    classesList.push(`controls/${element}`);
+  });
 }
 
 function createIntroduction(listToParse) {
   addToSection(listToParse, introductionSection);
+  listToParse.forEach(element => {
+    classesList.push(element);
+  });
 }
 
-function createMiscallenous(listToParse) {
-  addToSection(listToParse, miscallenousSection);
+function createMiscellaneous(listToParse) {
+  addToSection(listToParse, miscellaneousSection);
+  listToParse.forEach(element => {
+    classesList.push(`miscellaneous/${element}`);
+  });
 }
 
 function addToSection(entriesList, targetSection) {
@@ -72,8 +86,8 @@ function addToSection(entriesList, targetSection) {
       else if (targetSection === controlsSection) {
         onButtonNavigated("controls/" + entriesList[i]);
       }
-      else if (targetSection === miscallenousSection) {
-        onButtonNavigated("miscallenous/" + entriesList[i]);
+      else if (targetSection === miscellaneousSection) {
+        onButtonNavigated("miscellaneous/" + entriesList[i]);
       }
       else {
         onButtonNavigated(entriesList[i]);
@@ -125,32 +139,22 @@ main.onload = () => {
     }
   });
 
-  const hash = window.location.hash;
-
-  if (hash) {
-    const target = doc.querySelector(hash);
-
-    if (target) {
-      target.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-      });
-    }
-  }
+  scrollToHash();
 };
 
 window.addEventListener("hashchange", () => {
-  const doc = main.contentDocument;
-  if (!doc) return;
+  scrollToHash();
+});
 
-  if (!location.hash) {
-    return;
-  }
+function scrollToHash() {
+  const doc = main.contentDocument;
+  if (!doc || !location.hash) return;
 
   const target = doc.querySelector(location.hash);
   target?.scrollIntoView({
-    behavior: "smooth"
+    behavior: "smooth",
+    block: "start",
   });
-});
+}
 
 fetch_and_process_list();
