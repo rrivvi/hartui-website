@@ -299,9 +299,10 @@ input:focus {
 
 .search-results-container {
   z-index: 1;
-  display:none;
+  display: flex;
   opacity: 0;
-  pointer-events: none;
+  visibility: hidden;
+  pointer-events: visible;
   width: calc(294px + 16px);
   min-height: calc(60px + 52px);
   height: fit-content;
@@ -328,9 +329,8 @@ input:focus {
 }
 
 .search-container:has(> input:focus) .search-results-container {
-  display: flex;
+  visibility: visible;
   opacity: 1;
-  pointer-events: all;
   animation: fadeIn 0.75s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
