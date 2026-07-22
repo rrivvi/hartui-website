@@ -900,11 +900,11 @@
     "RelativePath": "controls/cuiLabel.html",
     "Kind": "Controls",
     "Header": "cuiLabel",
-    "Summary": "A label that supports both horizontal and vertical text alignment, along\nwith escaped newline and tab characters in its content.",
+    "Summary": "An enhanced label control with flexible text layout and rendering options.",
     "Properties": [
       {
         "Name": "Content",
-        "Description": "The text displayed by the control. Escaped sequences such as\n\\n, \\r\\n, and \\t are\nautomatically converted into newlines and tabs."
+        "Description": "The text displayed by the control."
       },
       {
         "Name": "HorizontalAlignment",
