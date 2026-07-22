@@ -1,4 +1,12 @@
 let classesList = [];
+let currentPage = null;
+
+function slugify(text) {
+  return String(text)
+    .trim()
+    .toLowerCase()
+    .replace(/[^\w]+/g, "-");
+}
 
 function fetch_and_process_list() {
   fetch("list")
@@ -35,6 +43,7 @@ function processSections(sectionsArray) {
     history.replaceState({}, "", url);
   }
 
+  currentPage = pageName;
   main.src = `/docs/pages/${pageName}.html${hash}`;
 }
 
@@ -103,10 +112,18 @@ function onButtonNavigated(target) {
 }
 
 function loadDoc(page, hash = "") {
-  main.src = `/docs/pages/${page}.html${hash}`;
   const url = new URL(location);
   url.searchParams.set("p", page);
   url.hash = hash;
+
+  if (page === currentPage) {
+    history.pushState({}, "", url);
+    scrollToHash();
+    return;
+  }
+
+  currentPage = page;
+  main.src = `/docs/pages/${page}.html${hash}`;
   history.pushState({}, "", url);
 }
 
@@ -119,10 +136,7 @@ main.onload = () => {
 
   doc.querySelectorAll("h1,h2,h3,h4").forEach(h => {
     if (!h.id) {
-      h.id = h.textContent
-        .trim()
-        .toLowerCase()
-        .replace(/[^\w]+/g, "-");
+      h.id = slugify(h.textContent);
 
       h.style = "display: inline-flex;";
 
@@ -139,6 +153,26 @@ main.onload = () => {
     }
   });
 
+  // Give every properties/methods/events table row an
+  // id for search results to be able to scroll
+  doc.querySelectorAll("table").forEach(table => {
+    const headerCell = table.querySelector("thead th");
+    if (!headerCell) return;
+
+    const headerText = headerCell.textContent.trim().toLowerCase();
+    let prefix = null;
+    if (headerText.startsWith("propert")) prefix = "property";
+    else if (headerText.startsWith("method")) prefix = "method";
+    else if (headerText.startsWith("event")) prefix = "event";
+    else return;
+
+    table.querySelectorAll("tbody tr").forEach(row => {
+      const nameCell = row.querySelector("td code");
+      if (!nameCell || row.id) return;
+      row.id = `${prefix}-${slugify(nameCell.textContent)}`;
+    });
+  });
+
   scrollToHash();
 };
 
@@ -151,10 +185,22 @@ function scrollToHash() {
   if (!doc || !location.hash) return;
 
   const target = doc.querySelector(location.hash);
-  target?.scrollIntoView({
-    behavior: "smooth",
-    block: "start",
-  });
+  if (target != null) {
+    target.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+
+    target.classList.remove("search-result-animation");
+    void target.offsetWidth;
+    target.classList.add("search-result-animation");
+
+    target.addEventListener(
+      "animationend",
+      () => target.classList.remove("search-result-animation"),
+      { once: true }
+    );
+  }
 }
 
 fetch_and_process_list();

@@ -79,9 +79,9 @@ addEventListener("DOMContentLoaded", async (event) => {
 
       const isMatch = (text) => String(text).toLowerCase().includes(query);
 
-      const buildResultButton = (className, pageName, textContent) => {
+      const buildResultButton = (className, pageName, textContent, hash = "") => {
         pageName = pageName.replace(".html", "");
-        return `<button class="${className}" onclick="loadDoc('${escapeJsString(pageName)}')">${escapeHtml(textContent)}</button>`;
+        return `<button class="${className}" onclick="loadDoc('${escapeJsString(pageName)}', '${escapeJsString(hash)}')">${escapeHtml(textContent)}</button>`;
       };
 
       const results = [];
@@ -134,21 +134,25 @@ addEventListener("DOMContentLoaded", async (event) => {
               continue;
             }
 
+            // slugify function is supplied by navigation.js 
+            const memberHash = `#${prefixLabel}-${slugify(memberName)}`;
+
             results.push({
               sortKind: kindPriority[kind] ?? 99,
               sortType: memberTypeOrder,
               html: buildResultButton(
                 memberClassName,
                 pageName,
-                `${displayName} • ${memberName}`
+                `${displayName} • ${memberName}`,
+                memberHash
               )
             });
           }
         };
 
-        pushMembers(entry.Properties, "search-result-property", 1);
-        pushMembers(entry.Methods, "search-result-method", 2);
-        pushMembers(entry.Events, "search-result-event", 3);
+        pushMembers(entry.Properties, "search-result-property", 1, "property");
+        pushMembers(entry.Methods, "search-result-method", 2, "method");
+        pushMembers(entry.Events, "search-result-event", 3, "event");
 
         if (isControl || isComponent || isDoc) {
           continue;
