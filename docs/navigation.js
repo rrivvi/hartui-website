@@ -188,7 +188,7 @@ function scrollToHash() {
   if (target != null) {
     target.scrollIntoView({
       behavior: "smooth",
-      block: "start",
+      block: "center",
     });
 
     target.classList.remove("search-result-animation");
