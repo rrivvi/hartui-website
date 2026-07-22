@@ -169,7 +169,7 @@ ul * {
 }
 
 #n {
-  background-image: url("miscallenous.webp");
+  background-image: url("miscellaneous.webp");
 }
 
 main {
@@ -393,6 +393,11 @@ input:focus {
 .search-result-component {
   padding-left: 42px !important;
   background-image: url("./component.webp");
+}
+
+.search-result-miscellaneous {
+  padding-left: 42px !important;
+  background-image: url("./miscellaneous.webp");
 }
 
 .search-result-property {

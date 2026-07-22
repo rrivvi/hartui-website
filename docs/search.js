@@ -62,8 +62,8 @@ addEventListener("DOMContentLoaded", async (event) => {
       const kindPriority = {
         "Controls": 0,
         "Components": 1,
-        "Docs": 2,
-        "Miscellaneous": 3
+        "Miscellaneous": 2,
+        "Docs": 3
       };
 
       const escapeHtml = (value) => String(value)
@@ -95,12 +95,13 @@ addEventListener("DOMContentLoaded", async (event) => {
         const isControl = kind === "Controls";
         const isComponent = kind === "Components";
         const isDoc = kind === "Docs";
-        
+        const isMiscellaneous = kind === "Miscellaneous";
+
         const pageName = relativePath || fileName || header;
         const displayName = header || fileName;
 
         const pageMatches =
-          isControl || isComponent || isDoc
+          isControl || isComponent || isDoc || isMiscellaneous
             ? isMatch(header) ||
             isMatch(fileName) ||
             isMatch(relativePath) ||
@@ -111,12 +112,15 @@ addEventListener("DOMContentLoaded", async (event) => {
           results.push({
             sortKind: kindPriority[kind] ?? 99,
             sortType: 0,
+            sortName: displayName.toLowerCase(),
             html: buildResultButton(
               isComponent
                 ? "search-result-component"
                 : isControl
                   ? "search-result-control"
-                  : "search-result-docs",
+                  : isMiscellaneous
+                    ? "search-result-miscellaneous"
+                    : "search-result-docs",
               pageName,
               displayName
             )
@@ -140,6 +144,7 @@ addEventListener("DOMContentLoaded", async (event) => {
             results.push({
               sortKind: kindPriority[kind] ?? 99,
               sortType: memberTypeOrder,
+              sortName: displayName.toLowerCase(),
               html: buildResultButton(
                 memberClassName,
                 pageName,
@@ -159,7 +164,11 @@ addEventListener("DOMContentLoaded", async (event) => {
         }
       }
 
-      results.sort((a, b) => a.sortKind - b.sortKind || a.sortType - b.sortType);
+      results.sort((a, b) =>
+        a.sortType - b.sortType ||
+        a.sortKind - b.sortKind ||
+        a.sortName.localeCompare(b.sortName)
+      );
 
       const dedupedHtml = [];
       const seen = new Set();
